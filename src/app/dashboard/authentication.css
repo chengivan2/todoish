@@ -16,6 +16,10 @@
   align-items: center;
 }
 
+.dashboard-welcome-message {
+  letter-spacing: 1px;
+}
+
 .separator {
   display: flex;
   align-items: center;

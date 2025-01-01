@@ -11,7 +11,10 @@ export default function Authentication() {
     <div className="container">
       <div className="authentication-container">
         <h1>Welcome to Todoish</h1>
-        <p>Please sign in to start managing your tasks</p>
+        
+        <p className="dashboard-welcome-message">
+          Please sign in to start managing your tasks
+        </p>
 
         <div className="dashboard-sign-in">
           <LoginLink>Sign in</LoginLink>
