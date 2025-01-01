@@ -9,19 +9,21 @@ import "./authentication.css";
 export default function Authentication() {
   return (
     <div className="container">
-      <h1>Welcome to Todoish</h1>
-      <p>Please sign in to start managing your tasks</p>
+      <div className="authentication-container">
+        <h1>Welcome to Todoish</h1>
+        <p>Please sign in to start managing your tasks</p>
 
-      <div>
-        <LoginLink>Sign in</LoginLink>
-      </div>
+        <div className="dashboard-sign-in">
+          <LoginLink>Sign in</LoginLink>
+        </div>
 
-      <div className="separator">
-        <span>or</span>
-      </div>
+        <div className="separator">
+          <span>OR</span>
+        </div>
 
-      <div>
-        <RegisterLink>Sign up</RegisterLink>
+        <div className="dashboard-sign-up">
+          <RegisterLink>Sign up</RegisterLink>
+        </div>
       </div>
     </div>
   );
