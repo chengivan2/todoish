@@ -1,20 +1,21 @@
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
-import { redirect } from "next/navigation";
 import SignOutButton from "../components/SignOutButton";
+import Authentication from "./Authentication";
 
 export default async function DashboardPage() {
   const { isAuthenticated, getUser } = getKindeServerSession();
-  const user = await getUser();
-
-  if (!(await isAuthenticated())) {
-    redirect("/");
+  const authenticated = await isAuthenticated();
+  const user = authenticated ? await getUser() : null;
+  
+  if (!authenticated) {
+    return <Authentication />;
   }
 
   return (
-    <div>
+    <>
       <h1>Dashboard</h1>
       <p>Welcome {user.given_name || user.email}</p>
       <SignOutButton />
-    </div>
+    </>
   );
 }

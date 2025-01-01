@@ -1,9 +1,7 @@
 "use client";
 
-import { useKindeAuth } from "@kinde-oss/kinde-auth-nextjs";
+import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 
 export default function SignOutButton() {
-  const { logout } = useKindeAuth();
-
-  return <button onClick={() => logout()}>Sign Out</button>;
+  return <LogoutLink>Sign Out</LogoutLink>;
 }
