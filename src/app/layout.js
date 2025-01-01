@@ -1,4 +1,5 @@
 import "./globals.css";
+import { AuthProvider } from "./AuthProvider";
 
 export const metadata = {
   title: "Todoish",
@@ -7,10 +8,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>
-        {children}
-      </body>
-    </html>
+    <AuthProvider>
+      <html lang="en">
+        <body>
+          {children}
+        </body>
+      </html>
+    </AuthProvider>
   );
 }
