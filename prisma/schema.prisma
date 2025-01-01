@@ -1,8 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
   provider = "prisma-client-js"
@@ -11,4 +6,44 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id
+  email         String    @unique
+  given_name    String?
+  family_name   String?
+  created_at    DateTime  @default(now())
+  updated_at    DateTime  @updatedAt
+  tasks         Task[]
+  deletedTasks  DeletedTask[]
+
+  @@map("users")
+}
+
+model Task {
+  id          String    @id @default(cuid())
+  title       String
+  description String?
+  completed   Boolean   @default(false)
+  created_at  DateTime  @default(now())
+  updated_at  DateTime  @updatedAt
+  user_id     String
+  user        User      @relation(fields: [user_id], references: [id])
+
+  @@map("tasks")
+}
+
+model DeletedTask {
+  id          String    @id @default(cuid())
+  title       String
+  description String?
+  completed   Boolean
+  created_at  DateTime  // Store original creation date
+  deleted_at  DateTime  @default(now())
+  expires_at  DateTime
+  user_id     String
+  user        User      @relation(fields: [user_id], references: [id])
+
+  @@map("deleted_tasks")
 }
