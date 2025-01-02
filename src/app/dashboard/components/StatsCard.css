@@ -1,0 +1,38 @@
+.stats-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.stats-card:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stats-title {
+  font-size: 0.875rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.stats-value {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.stats-description {
+  font-size: 0.875rem;
+  color: #666;
+  margin-top: 0.25rem;
+}
+
+/* Responsive grid layout */
+@media (min-width: 768px) {
+  .stats-card {
+    flex: 1;
+    min-width: 200px;
+  }
+} 
