@@ -1,6 +1,7 @@
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import SignOutButton from "../components/SignOutButton";
 import Authentication from "./Authentication";
+import { syncUser } from "@/lib/db";
 
 export default async function DashboardPage() {
   const { isAuthenticated, getUser } = getKindeServerSession();
@@ -10,6 +11,9 @@ export default async function DashboardPage() {
   if (!authenticated) {
     return <Authentication />;
   }
+
+  // Sync user data with our database
+  await syncUser(user);
 
   return (
     <>
