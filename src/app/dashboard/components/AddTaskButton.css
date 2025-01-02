@@ -1,0 +1,150 @@
+.add-task-button {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 2rem;
+  background: #333;
+  color: white;
+  border-radius: 50px;
+  border: 1px solid #ffcc99;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.add-task-button:hover {
+  transform: translateX(-50%) translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  background: #ffcc99;
+  color: #181818;
+}
+
+.add-task-button:hover .plus-icon {
+  color: #181818;
+}
+
+.add-task-button.scrolled {
+  left: auto;
+  right: 2rem;
+  transform: none;
+}
+
+.plus-icon {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #ffcc99;
+}
+
+.button-text {
+  font-family: var(--font-playfair);
+}
+
+/* Form Overlay */
+.task-form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+.task-form {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 100%;
+  max-width: 500px;
+  padding: 2rem;
+  animation: slideUp 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.task-form input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.125rem;
+  border: 2px solid #ffcc99;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.task-form input:focus {
+  outline: none;
+  border-color: #ff9966;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.form-actions button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  transition: background-color 0.2s ease, box-shadow 0.3s ease;
+}
+
+.form-actions button[type="button"] {
+  background: transparent;
+  border: 1px solid #ddd;
+}
+
+.form-actions button[type="submit"] {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+.form-actions button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  color: #ffcc99;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .add-task-button {
+    padding: 0.875rem 1.5rem;
+  }
+  
+  .add-task-button.scrolled {
+    right: 1rem;
+  }
+} 

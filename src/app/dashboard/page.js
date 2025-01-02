@@ -6,6 +6,7 @@ import StatsCard from "./components/StatsCard";
 import TaskList from "./components/TaskList";
 import prisma from "@/lib/prisma";
 import './styles/page.css';
+import AddTaskButton from './components/AddTaskButton';
 
 async function getTaskStats(userId) {
   const tasks = await prisma.task.findMany({
@@ -74,6 +75,7 @@ export default async function DashboardPage() {
         <h2>Your Tasks</h2>
         <TaskList initialTasks={tasks} />
       </section>
+      <AddTaskButton />
     </div>
   );
 }

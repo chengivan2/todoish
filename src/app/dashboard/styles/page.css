@@ -21,15 +21,24 @@
 }
 
 .tasks-section {
-  background: white;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease, box-shadow 0.3s ease;
+}
+
+.tasks-section:hover {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .tasks-section h2 {
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
+  color: #fff;
 }
 
 @media (min-width: 768px) {
