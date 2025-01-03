@@ -40,10 +40,6 @@
   color: #ffcc99;
 }
 
-.button-text {
-  font-family: var(--font-playfair);
-}
-
 /* Form Overlay */
 .task-form-overlay {
   position: fixed;
