@@ -32,7 +32,7 @@
 
 .task-item.completed .task-title {
   text-decoration: line-through;
-  color: #ffcc99;
+  color: #ff9966;
 }
 
 .task-done-button {
