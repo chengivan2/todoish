@@ -33,7 +33,7 @@ export default function AddTaskButton() {
       if (response.ok) {
         setNewTask('');
         setShowForm(false);
-        // Refresh the page to show new task
+
         window.location.reload();
       }
     } catch (error) {
