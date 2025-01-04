@@ -1,11 +1,12 @@
-'use client';
-import { useState, useEffect } from 'react';
-import './AddTaskButton.css';
+"use client";
+import { useState, useEffect } from "react";
+import "./AddTaskButton.css";
 
 export default function AddTaskButton() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [showForm, setShowForm] = useState(false);
-  const [newTask, setNewTask] = useState('');
+  const [newTask, setNewTask] = useState("");
+  const [description, setDescription] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,8 +14,8 @@ export default function AddTaskButton() {
       setIsScrolled(scrolled);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleSubmit = async (e) => {
@@ -22,29 +23,34 @@ export default function AddTaskButton() {
     if (!newTask.trim()) return;
 
     try {
-      const response = await fetch('/api/tasks', {
-        method: 'POST',
+      const response = await fetch("/api/tasks", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ title: newTask }),
+        body: JSON.stringify({
+          title: newTask,
+          description,
+          createdAt: userTimestamp,
+        }),
       });
 
       if (response.ok) {
-        setNewTask('');
+        setNewTask("");
+        setDescription("");
         setShowForm(false);
 
         window.location.reload();
       }
     } catch (error) {
-      console.error('Failed to create task:', error);
+      console.error("Failed to create task:", error);
     }
   };
 
   return (
     <>
-      <button 
-        className={`add-task-button ${isScrolled ? 'scrolled' : ''}`}
+      <button
+        className={`add-task-button ${isScrolled ? "scrolled" : ""}`}
         onClick={() => setShowForm(true)}
       >
         <span className="plus-icon">+</span>
@@ -53,7 +59,11 @@ export default function AddTaskButton() {
 
       {showForm && (
         <div className="task-form-overlay" onClick={() => setShowForm(false)}>
-          <form className="task-form" onSubmit={handleSubmit} onClick={e => e.stopPropagation()}>
+          <form
+            className="task-form"
+            onSubmit={handleSubmit}
+            onClick={(e) => e.stopPropagation()}
+          >
             <input
               type="text"
               value={newTask}
@@ -61,8 +71,16 @@ export default function AddTaskButton() {
               placeholder="What needs to be done?"
               autoFocus
             />
+
+            <textarea
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              placeholder="Describe your task"
+            />
             <div className="form-actions">
-              <button type="button" onClick={() => setShowForm(false)}>Cancel</button>
+              <button type="button" onClick={() => setShowForm(false)}>
+                Cancel
+              </button>
               <button type="submit">Add Task</button>
             </div>
           </form>
@@ -70,4 +88,4 @@ export default function AddTaskButton() {
       )}
     </>
   );
-} 
+}

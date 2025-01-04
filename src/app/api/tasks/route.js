@@ -23,7 +23,7 @@ export async function POST(request) {
     const task = await prisma.task.create({
       data: {
         title,
-        description: description || null,
+        description,
         user_id: user.id,
       },
     });
