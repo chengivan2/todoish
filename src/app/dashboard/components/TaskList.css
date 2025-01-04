@@ -16,6 +16,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: background-color 0.2s ease, box-shadow 0.3s ease;
   color: #fff;
+  cursor: pointer;
 }
 
 .task-item:hover {
@@ -38,5 +39,54 @@
 
 .task-item.completed .task-title {
   text-decoration: line-through;
+  color: #ffcc99;
+}
+
+.task-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.task-details {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 2rem;
+  color: #fff;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.task-details h2 {
+  margin-bottom: 1rem;
+}
+
+.task-details p {
+  margin-bottom: 1.5rem;
+}
+
+.task-details button {
+  padding: 0.75rem 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.3s ease;
+}
+
+.task-details button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   color: #ffcc99;
 }

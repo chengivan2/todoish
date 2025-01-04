@@ -4,6 +4,7 @@ import './TaskList.css';
 
 export default function TaskList({ initialTasks }) {
   const [tasks, setTasks] = useState(initialTasks);
+  const [selectedTask, setSelectedTask] = useState(null);
 
   const handleToggleComplete = async (taskId) => {
     try {
@@ -19,10 +20,22 @@ export default function TaskList({ initialTasks }) {
     }
   };
 
+  const handleTaskClick = (task) => {
+    setSelectedTask(task);
+  };
+
+  const closeOverlay = () => {
+    setSelectedTask(null);
+  };
+
   return (
     <div className="task-list">
       {tasks.map(task => (
-        <div key={task.id} className={`task-item ${task.completed ? 'completed' : ''}`}>
+        <div 
+          key={task.id} 
+          className={`task-item ${task.completed ? 'completed' : ''}`}
+          onClick={() => handleTaskClick(task)}
+        >
           <input
             type="checkbox"
             checked={task.completed}
@@ -32,6 +45,16 @@ export default function TaskList({ initialTasks }) {
           <span className="task-title">{task.title}</span>
         </div>
       ))}
+
+      {selectedTask && (
+        <div className="task-overlay" onClick={closeOverlay}>
+          <div className="task-details" onClick={(e) => e.stopPropagation()}>
+            <h2>{selectedTask.title}</h2>
+            <p>{selectedTask.description}</p>
+            <button onClick={closeOverlay}>Close</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 } 
