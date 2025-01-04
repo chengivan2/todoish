@@ -68,7 +68,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.task-form input {
+.task-form input, textarea {
   width: 100%;
   padding: 1rem;
   font-size: 1.125rem;
@@ -79,7 +79,7 @@
   color: #fff;
 }
 
-.task-form input:focus {
+.task-form input:focus, textarea:focus {
   outline: none;
   border-color: #ff9966;
 }
