@@ -72,7 +72,7 @@ export default async function DashboardPage() {
       </section>
 
       <section className="tasks-section">
-        <h2>Your Tasks</h2>
+        <h2 className="tasks-title">Your Tasks</h2>
         <TaskList initialTasks={tasks} />
       </section>
       <AddTaskButton />

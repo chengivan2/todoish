@@ -35,10 +35,10 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.tasks-section h2 {
+.tasks-title {
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
-  color: #fff;
+  color: #ffcc99;
 }
 
 @media (min-width: 768px) {
