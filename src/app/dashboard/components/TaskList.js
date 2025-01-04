@@ -44,38 +44,40 @@ export default function TaskList({ initialTasks }) {
   };
 
   return (
-    <div className="task-list">
-      {tasks.map(task => (
-        <div 
-          key={task.id} 
-          className={`task-item ${task.completed ? 'completed' : ''}`}
-          onClick={() => handleTaskClick(task)}
-        >
-          <span className="task-title">{task.title}</span>
-          <div className="task-actions">
-            <button 
-              className="task-done-button" 
-              onClick={(e) => {
-                e.stopPropagation();
-                handleToggleComplete(task.id);
-              }}
-              title={task.completed ? "Mark as not done" : "I'm done"}
-            >
-              {task.completed ? "Revisit" : "Done"}
-            </button>
-            <button 
-              className="task-delete-button" 
-              onClick={(e) => {
-                e.stopPropagation();
-                handleDelete(task.id);
-              }}
-              title="Delete task"
-            >
-              <TrashIcon />
-            </button>
+    <>
+      <div className="task-list">
+        {tasks.map(task => (
+          <div 
+            key={task.id} 
+            className={`task-item ${task.completed ? 'completed' : ''}`}
+            onClick={() => handleTaskClick(task)}
+          >
+            <span className="task-title">{task.title}</span>
+            <div className="task-actions">
+              <button 
+                className="task-done-button" 
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleToggleComplete(task.id);
+                }}
+                title={task.completed ? "Mark as not done" : "I'm done"}
+              >
+                {task.completed ? "Revisit" : "Done"}
+              </button>
+              <button 
+                className="task-delete-button" 
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleDelete(task.id);
+                }}
+                title="Delete task"
+              >
+                <TrashIcon />
+              </button>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
 
       {selectedTask && (
         <div className="task-overlay" onClick={closeOverlay}>
@@ -86,6 +88,6 @@ export default function TaskList({ initialTasks }) {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 } 
