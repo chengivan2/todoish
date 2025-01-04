@@ -7,7 +7,7 @@ export default function Home() {
       <main className={styles.main}>
         <h1>Todoish</h1>
         <p>Go to the dashboard</p>
-        <Link href="/dashboard">Dashboard</Link>
+        <Link className={styles.link} href="/dashboard">Dashboard</Link>
       </main>
     </div>
   );
