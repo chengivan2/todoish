@@ -36,13 +36,17 @@ export default function TaskList({ initialTasks }) {
           className={`task-item ${task.completed ? 'completed' : ''}`}
           onClick={() => handleTaskClick(task)}
         >
-          <input
-            type="checkbox"
-            checked={task.completed}
-            onChange={() => handleToggleComplete(task.id)}
-            className="task-checkbox"
-          />
           <span className="task-title">{task.title}</span>
+          <button 
+            className="task-done-button" 
+            onClick={(e) => {
+              e.stopPropagation();
+              handleToggleComplete(task.id);
+            }}
+            title="I'm done"
+          >
+            Done
+          </button>
         </div>
       ))}
 
