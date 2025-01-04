@@ -43,9 +43,9 @@ export default function TaskList({ initialTasks }) {
               e.stopPropagation();
               handleToggleComplete(task.id);
             }}
-            title="I'm done"
+            title={task.completed ? "Mark as not done" : "I'm done"}
           >
-            Done
+            {task.completed ? "Revisit" : "Done"}
           </button>
         </div>
       ))}
