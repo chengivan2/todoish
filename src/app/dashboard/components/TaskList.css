@@ -35,6 +35,11 @@
   color: #ff9966;
 }
 
+.task-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
 .task-done-button {
   padding: 0.5rem 1rem;
   background: rgba(255, 255, 255, 0.1);
@@ -59,6 +64,22 @@
 .task-item.completed .task-done-button:hover {
   background: rgba(255, 99, 71, 0.15);
   color: #ff6347;
+}
+
+.task-delete-button {
+  padding: 0.5rem;
+  background: rgba(255, 0, 0, 0.1); /* Destructive color */
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  border-radius: 6px;
+  color: #ff0000;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.3s ease;
+}
+
+.task-delete-button:hover {
+  background: rgba(255, 0, 0, 0.15);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  color: #ff4d4d;
 }
 
 .task-overlay {
@@ -87,7 +108,7 @@
 }
 
 .task-details h2 {
-  color: #ffcc99;
+  color: hsl(0, 1%, 80%);
   margin-bottom: 1rem;
 }
 

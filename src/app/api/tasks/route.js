@@ -39,7 +39,6 @@ export async function POST(request) {
   }
 }
 
-// Get all tasks for the authenticated user
 export async function GET() {
   try {
     const { isAuthenticated, getUser } = getKindeServerSession();

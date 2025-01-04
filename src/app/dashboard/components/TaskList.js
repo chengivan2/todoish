@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { TrashIcon } from '@radix-ui/react-icons';
 import './TaskList.css';
 
 export default function TaskList({ initialTasks }) {
@@ -20,6 +21,20 @@ export default function TaskList({ initialTasks }) {
     }
   };
 
+  const handleDelete = async (taskId) => {
+    try {
+      const response = await fetch(`/api/tasks/${taskId}`, {
+        method: 'DELETE',
+      });
+
+      if (response.ok) {
+        window.location.reload();
+      }
+    } catch (error) {
+      console.error('Failed to delete task:', error);
+    }
+  };
+
   const handleTaskClick = (task) => {
     setSelectedTask(task);
   };
@@ -37,16 +52,28 @@ export default function TaskList({ initialTasks }) {
           onClick={() => handleTaskClick(task)}
         >
           <span className="task-title">{task.title}</span>
-          <button 
-            className="task-done-button" 
-            onClick={(e) => {
-              e.stopPropagation();
-              handleToggleComplete(task.id);
-            }}
-            title={task.completed ? "Mark as not done" : "I'm done"}
-          >
-            {task.completed ? "Revisit" : "Done"}
-          </button>
+          <div className="task-actions">
+            <button 
+              className="task-done-button" 
+              onClick={(e) => {
+                e.stopPropagation();
+                handleToggleComplete(task.id);
+              }}
+              title={task.completed ? "Mark as not done" : "I'm done"}
+            >
+              {task.completed ? "Revisit" : "Done"}
+            </button>
+            <button 
+              className="task-delete-button" 
+              onClick={(e) => {
+                e.stopPropagation();
+                handleDelete(task.id);
+              }}
+              title="Delete task"
+            >
+              <TrashIcon />
+            </button>
+          </div>
         </div>
       ))}
 
