@@ -30,8 +30,7 @@ export default function AddTaskButton() {
         },
         body: JSON.stringify({
           title: newTask,
-          description,
-          createdAt: userTimestamp,
+          description
         }),
       });
 
