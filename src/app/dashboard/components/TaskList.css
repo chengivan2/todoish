@@ -51,6 +51,16 @@
   color: #ffcc99;
 }
 
+.task-item.completed .task-done-button {
+  background: rgba(255, 99, 71, 0.1);
+  border: 1px solid rgba(255, 99, 71, 0.3);
+}
+
+.task-item.completed .task-done-button:hover {
+  background: rgba(255, 99, 71, 0.15);
+  color: #ff6347;
+}
+
 .task-overlay {
   position: fixed;
   top: 0;
