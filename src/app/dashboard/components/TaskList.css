@@ -52,8 +52,8 @@
 }
 
 .task-item.completed .task-done-button {
-  background: rgba(255, 99, 71, 0.1);
-  border: 1px solid rgba(255, 99, 71, 0.3);
+  background: #ff99661a;
+  border: 1px solid #ff99664d;
 }
 
 .task-item.completed .task-done-button:hover {
