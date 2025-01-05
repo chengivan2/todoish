@@ -110,6 +110,10 @@
 }
 
 @media (max-width: 425px) {
+  .dashboard {
+    padding: 1rem;
+  }
+
   .dashboard-header h1 {
     font-size: 1rem;
   }
