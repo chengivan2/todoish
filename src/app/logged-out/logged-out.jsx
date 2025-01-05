@@ -1,6 +1,6 @@
 'use client';
 
-import Authentication from "../Authentication";
+import Authentication from "../dashboard/Authentication";
 
 export default function LoggedOutPage() {
   return (
