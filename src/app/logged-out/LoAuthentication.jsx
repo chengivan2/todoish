@@ -6,7 +6,7 @@ import {
 } from "@kinde-oss/kinde-auth-nextjs/components";
 import "../dashboard/authentication.css";
 
-export default function Authentication() {
+export default function LoAuthentication() {
   return (
     <div className="container">
       <div className="authentication-container">
