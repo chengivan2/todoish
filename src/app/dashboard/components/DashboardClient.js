@@ -1,7 +1,8 @@
-'use client';
-import { useState } from 'react';
-import TaskList from './TaskList';
-import AddTaskButton from './AddTaskButton';
+"use client";
+import { useState } from "react";
+import TaskList from "./TaskList";
+import AddTaskButton from "./AddTaskButton";
+import SignOutButton from "@/app/components/SignOutButton";
 
 export default function DashboardClient({ user, stats, tasks }) {
   const [selectedTask, setSelectedTask] = useState(null);
@@ -22,18 +23,18 @@ export default function DashboardClient({ user, stats, tasks }) {
       </header>
 
       <section className="stats-grid">
-        <StatsCard 
-          title="Open Tasks" 
+        <StatsCard
+          title="Open Tasks"
           value={stats.totalOpen}
           description="Tasks waiting to be completed"
         />
-        <StatsCard 
-          title="Completed" 
+        <StatsCard
+          title="Completed"
           value={stats.completed}
           description="Tasks you've finished"
         />
-        <StatsCard 
-          title="Completion Rate" 
+        <StatsCard
+          title="Completion Rate"
           value={`${stats.completionRate}%`}
           description="Your productivity score"
         />
@@ -56,4 +57,4 @@ export default function DashboardClient({ user, stats, tasks }) {
       <AddTaskButton />
     </div>
   );
-} 
+}

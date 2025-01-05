@@ -45,6 +45,16 @@ export default function TaskList({ initialTasks }) {
 
   return (
     <>
+    {selectedTask && (
+        <div className="task-overlay" onClick={closeOverlay}>
+          <div className="task-details" onClick={(e) => e.stopPropagation()}>
+            <h2>{selectedTask.title}</h2>
+            <p>{selectedTask.description}</p>
+            <button onClick={closeOverlay}>Close</button>
+          </div>
+        </div>
+      )}
+      
       <div className="task-list">
         {tasks.map(task => (
           <div 
@@ -78,16 +88,6 @@ export default function TaskList({ initialTasks }) {
           </div>
         ))}
       </div>
-
-      {selectedTask && (
-        <div className="task-overlay" onClick={closeOverlay}>
-          <div className="task-details" onClick={(e) => e.stopPropagation()}>
-            <h2>{selectedTask.title}</h2>
-            <p>{selectedTask.description}</p>
-            <button onClick={closeOverlay}>Close</button>
-          </div>
-        </div>
-      )}
     </>
   );
 } 
