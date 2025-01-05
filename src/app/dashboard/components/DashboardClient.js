@@ -3,6 +3,7 @@ import { useState } from "react";
 import TaskList from "./TaskList";
 import AddTaskButton from "./AddTaskButton";
 import SignOutButton from "@/app/components/SignOutButton";
+import "./DashboardClient.css";
 
 export default function DashboardClient({ user, stats, tasks }) {
   const [selectedTask, setSelectedTask] = useState(null);
@@ -11,7 +12,7 @@ export default function DashboardClient({ user, stats, tasks }) {
     setSelectedTask(task);
   };
 
-  const closeOverlay = () => {
+  const closeSidebar = () => {
     setSelectedTask(null);
   };
 
@@ -40,21 +41,21 @@ export default function DashboardClient({ user, stats, tasks }) {
         />
       </section>
 
-      {selectedTask && (
-        <div className="task-overlay" onClick={closeOverlay}>
-          <div className="task-details" onClick={(e) => e.stopPropagation()}>
-            <h2>{selectedTask.title}</h2>
-            <p>{selectedTask.description}</p>
-            <button onClick={closeOverlay}>Close</button>
-          </div>
-        </div>
-      )}
-
       <section className="tasks-section">
         <h2 className="tasks-title">Your Tasks</h2>
         <TaskList initialTasks={tasks} onTaskClick={handleTaskClick} />
       </section>
       <AddTaskButton />
+
+      {selectedTask && (
+        <div className="task-sidebar">
+          <div className="task-details">
+            <h2>{selectedTask.title}</h2>
+            <p>{selectedTask.description}</p>
+            <button onClick={closeSidebar}>Close</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
