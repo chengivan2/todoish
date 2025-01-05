@@ -4,6 +4,7 @@ import TaskList from "./TaskList";
 import AddTaskButton from "./AddTaskButton";
 import SignOutButton from "@/app/components/SignOutButton";
 import "./DashboardClient.css";
+import StatsCard from "./StatsCard";
 
 export default function DashboardClient({ user, stats, tasks }) {
   const [selectedTask, setSelectedTask] = useState(null);
