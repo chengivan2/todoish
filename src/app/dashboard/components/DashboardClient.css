@@ -96,7 +96,11 @@
 }
 
 @media (max-width: 767px) {
+  .dashboard {
+    padding: 1rem;
+  }
+  
   .tasks-section {
     padding: 1rem;
   }
-} 
+}
