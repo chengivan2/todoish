@@ -10,7 +10,7 @@ export default function LoAuthentication() {
   return (
     <div className="container">
       <div className="authentication-container">
-        <h1>Youve been logged out successfully</h1>
+        <h1>You've been logged out successfully</h1>
         
         <p className="dashboard-welcome-message">
           Sign in again to continue managing your tasks
