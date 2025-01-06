@@ -16,17 +16,13 @@ export default function LoAuthentication() {
           Sign in again to continue managing your tasks
         </p>
 
-        <div className="dashboard-sign-in">
-          <LoginLink>Sign in</LoginLink>
-        </div>
+        <LoginLink className="dashboard-sign-in">Sign in</LoginLink>
 
         <div className="separator">
           <span>OR</span>
         </div>
 
-        <div className="dashboard-sign-up">
-          <RegisterLink>Sign up</RegisterLink>
-        </div>
+        <RegisterLink className="dashboard-sign-up">Sign up</RegisterLink>
       </div>
     </div>
   );
