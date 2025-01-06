@@ -131,3 +131,14 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   color: #ffcc99;
 }
+
+.edit-task-title-input {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+  border: 2px solid #ffcc99;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}

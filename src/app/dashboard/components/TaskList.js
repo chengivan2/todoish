@@ -124,11 +124,13 @@ export default function TaskList({ initialTasks, onTaskClick }) {
                   value={editTitle}
                   onChange={(e) => setEditTitle(e.target.value)}
                   placeholder="Edit title"
+                  className="edit-task-title-input"
                 />
                 <textarea
                   value={editDescription}
                   onChange={(e) => setEditDescription(e.target.value)}
                   placeholder="Edit description"
+                  className="edit-task-description-input"
                 />
                 <div className="task-buttons">
                   <button onClick={handleUpdate}>Save</button>
