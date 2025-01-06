@@ -17,6 +17,11 @@ export default function DashboardClient({ user, stats, tasks }) {
     setSelectedTask(null);
   };
 
+  const handleEdit = () => {
+    // Implement edit functionality here
+    console.log('Edit task:', selectedTask);
+  };
+
   return (
     <div className="dashboard">
       <header className="dashboard-header">
@@ -53,7 +58,10 @@ export default function DashboardClient({ user, stats, tasks }) {
           <div className="task-details">
             <h2>{selectedTask.title}</h2>
             <p>{selectedTask.description}</p>
-            <button onClick={closeSidebar}>Close</button>
+            <div className="task-buttons">
+              <button onClick={handleEdit}>Edit</button>
+              <button onClick={closeSidebar}>Close</button>
+            </div>
           </div>
         </div>
       )}
