@@ -36,7 +36,7 @@ a {
   text-decoration: none;
 }
 
-input:focus {
+input#input_field_p_email_email:focus {
   outline: none !important;
   border-color: #ff9966 !important;
 }
