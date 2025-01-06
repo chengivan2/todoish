@@ -16,17 +16,13 @@ export default function Authentication() {
           Please sign in to start managing your tasks
         </p>
 
-        <LoginLink>
-          <div className="dashboard-sign-in">Sign in</div>
-        </LoginLink>
+        <LoginLink className="dashboard-sign-in">Sign in</LoginLink>
 
         <div className="separator">
           <span>OR</span>
         </div>
 
-        <RegisterLink>
-          <div className="dashboard-sign-up">Sign up</div>
-        </RegisterLink>
+        <RegisterLink className="dashboard-sign-up">Sign up</RegisterLink>
       </div>
     </div>
   );
