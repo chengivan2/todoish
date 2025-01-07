@@ -55,9 +55,9 @@
 }
 
 .tasks-cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
   width: 100%;
 }
 
