@@ -45,7 +45,7 @@
 }
 
 .tasks-cards-section {
-  margin-bottom: 2rem;
+  margin-bottom: 2rem 1rem;
 }
 
 .tasks-cards-title {
@@ -58,6 +58,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
+  justify-content: stretch;
 }
 
 .task-sidebar {
