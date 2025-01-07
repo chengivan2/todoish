@@ -1,4 +1,4 @@
-import React from "react";
+import "./TasksCards.css";
 
 export default function TasksCards() {
   return (
@@ -12,7 +12,7 @@ export default function TasksCards() {
         <h3>Completed Tasks</h3>
         <p>View your completed tasks here</p>
       </div>
-      
+
       <div className="pending-tasks-card">
         <h3>Pending Tasks</h3>
         <p>View your pending tasks here</p>

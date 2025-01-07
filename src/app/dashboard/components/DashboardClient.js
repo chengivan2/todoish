@@ -5,12 +5,13 @@ import AddTaskButton from "./AddTaskButton";
 import SignOutButton from "@/app/components/SignOutButton";
 import "./DashboardClient.css";
 import StatsCard from "./StatsCard";
+import TasksCards from "./TasksCards";
 
 export default function DashboardClient({ user, stats, tasks }) {
   const [selectedTask, setSelectedTask] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
-  const [editTitle, setEditTitle] = useState('');
-  const [editDescription, setEditDescription] = useState('');
+  const [editTitle, setEditTitle] = useState("");
+  const [editDescription, setEditDescription] = useState("");
 
   const handleTaskClick = (task) => {
     setSelectedTask(task);
@@ -30,9 +31,9 @@ export default function DashboardClient({ user, stats, tasks }) {
   const handleUpdate = async () => {
     try {
       const response = await fetch(`/api/tasks/${selectedTask.id}`, {
-        method: 'PATCH',
+        method: "PATCH",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           title: editTitle,
@@ -46,10 +47,10 @@ export default function DashboardClient({ user, stats, tasks }) {
         setIsEditing(false);
         window.location.reload();
       } else {
-        console.error('Failed to update task');
+        console.error("Failed to update task");
       }
     } catch (error) {
-      console.error('Error updating task:', error);
+      console.error("Error updating task:", error);
     }
   };
 
@@ -82,6 +83,11 @@ export default function DashboardClient({ user, stats, tasks }) {
         <h2 className="tasks-title">Your Tasks</h2>
         <TaskList initialTasks={tasks} onTaskClick={handleTaskClick} />
       </section>
+
+      <section className="tasks-cards-section">
+        <TasksCards />
+      </section>
+
       <AddTaskButton />
 
       {selectedTask && (
