@@ -85,7 +85,13 @@ export default function DashboardClient({ user, stats, tasks }) {
       </section>
 
       <section className="tasks-cards-section">
-        <TasksCards />
+        <div className="tasks-cards-title">
+        <h2>This is how we are doing</h2>
+        </div>
+
+        <div className="tasks-cards-container">
+          <TasksCards className="tasks-cards" />
+        </div>
       </section>
 
       <AddTaskButton />
