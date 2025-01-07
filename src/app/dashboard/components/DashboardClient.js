@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import TaskList from "./TaskList";
 import AddTaskButton from "./AddTaskButton";
 import SignOutButton from "@/app/components/SignOutButton";
@@ -7,22 +7,51 @@ import "./DashboardClient.css";
 import StatsCard from "./StatsCard";
 
 export default function DashboardClient({ user, stats, tasks }) {
-  const [deletedTasks, setDeletedTasks] = useState([]);
-  const [incompleteTasks, setIncompleteTasks] = useState([]);
-  const [completedTasks, setCompletedTasks] = useState([]);
+  const [selectedTask, setSelectedTask] = useState(null);
+  const [isEditing, setIsEditing] = useState(false);
+  const [editTitle, setEditTitle] = useState('');
+  const [editDescription, setEditDescription] = useState('');
 
-  useEffect(() => {
-    // Fetch last ten deleted tasks
-    fetch("/api/tasks/deleted")
-      .then(response => response.json())
-      .then(data => setDeletedTasks(data.slice(0, 10)));
+  const handleTaskClick = (task) => {
+    setSelectedTask(task);
+    setEditTitle(task.title);
+    setEditDescription(task.description);
+  };
 
-    // Fetch last ten incomplete tasks
-    setIncompleteTasks(tasks.filter(task => !task.completed).slice(0, 10));
+  const closeSidebar = () => {
+    setSelectedTask(null);
+    setIsEditing(false);
+  };
 
-    // Fetch last ten completed tasks
-    setCompletedTasks(tasks.filter(task => task.completed).slice(0, 10));
-  }, [tasks]);
+  const handleEdit = () => {
+    setIsEditing(true);
+  };
+
+  const handleUpdate = async () => {
+    try {
+      const response = await fetch(`/api/tasks/${selectedTask.id}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          title: editTitle,
+          description: editDescription,
+        }),
+      });
+
+      if (response.ok) {
+        const updatedTask = await response.json();
+        setSelectedTask(updatedTask);
+        setIsEditing(false);
+        window.location.reload();
+      } else {
+        console.error('Failed to update task');
+      }
+    } catch (error) {
+      console.error('Error updating task:', error);
+    }
+  };
 
   return (
     <div className="dashboard">
@@ -36,41 +65,59 @@ export default function DashboardClient({ user, stats, tasks }) {
           title="Open Tasks"
           value={stats.totalOpen}
           description="Tasks waiting to be completed"
-          buttonLabel="View Incomplete"
-          buttonTarget="#incomplete-tasks"
         />
         <StatsCard
           title="Completed"
           value={stats.completed}
           description="Tasks you've finished"
-          buttonLabel="View Completed"
-          buttonTarget="#completed-tasks"
         />
         <StatsCard
-          title="Deleted"
-          value={deletedTasks.length}
-          description="Recently deleted tasks"
-          buttonLabel="View Deleted"
-          buttonTarget="#deleted-tasks"
+          title="Completion Rate"
+          value={`${stats.completionRate}%`}
+          description="Your productivity score"
         />
       </section>
 
-      <section id="incomplete-tasks" className="tasks-section">
-        <h2 className="tasks-title">Last 10 Incomplete Tasks</h2>
-        <TaskList initialTasks={incompleteTasks} />
+      <section className="tasks-section">
+        <h2 className="tasks-title">Your Tasks</h2>
+        <TaskList initialTasks={tasks} onTaskClick={handleTaskClick} />
       </section>
-
-      <section id="completed-tasks" className="tasks-section">
-        <h2 className="tasks-title">Last 10 Completed Tasks</h2>
-        <TaskList initialTasks={completedTasks} />
-      </section>
-
-      <section id="deleted-tasks" className="tasks-section">
-        <h2 className="tasks-title">Last 10 Deleted Tasks</h2>
-        <TaskList initialTasks={deletedTasks} />
-      </section>
-
       <AddTaskButton />
+
+      {selectedTask && (
+        <div className="task-sidebar">
+          <div className="task-details">
+            {isEditing ? (
+              <>
+                <input
+                  type="text"
+                  value={editTitle}
+                  onChange={(e) => setEditTitle(e.target.value)}
+                  placeholder="Edit title"
+                />
+                <textarea
+                  value={editDescription}
+                  onChange={(e) => setEditDescription(e.target.value)}
+                  placeholder="Edit description"
+                />
+                <div className="task-buttons">
+                  <button onClick={handleUpdate}>Save</button>
+                  <button onClick={closeSidebar}>Cancel</button>
+                </div>
+              </>
+            ) : (
+              <>
+                <h2>{selectedTask.title}</h2>
+                <p>{selectedTask.description}</p>
+                <div className="task-buttons">
+                  <button onClick={handleEdit}>Edit</button>
+                  <button onClick={closeSidebar}>Close</button>
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
