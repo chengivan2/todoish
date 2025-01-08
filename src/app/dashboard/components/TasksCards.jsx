@@ -26,12 +26,16 @@ export default function DeletedTasks() {
     <>
       <div className="deleted-tasks-card">
         <h3>Deleted Tasks</h3>
-        <p>View your deleted tasks here</p>
-        <ul>
+        <div className="deleted-tasks-list">
           {deletedTasks.map((task) => (
-            <li key={task.id}>{task.title}</li>
+            <div key={task.id} className="deleted-task-item">
+              <span className="task-title">{task.title}</span>
+              <span className="task-date">
+                {new Date(task.deleted_at).toLocaleDateString()}
+              </span>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
 
       <div className="completed-tasks-card">

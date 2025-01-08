@@ -14,3 +14,45 @@
 .pending-tasks-card:hover {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
+
+.deleted-tasks-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.deleted-tasks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.deleted-task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  color: #fff;
+  transition: background-color 0.2s ease, box-shadow 0.3s ease;
+}
+
+.deleted-task-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.task-title {
+  font-weight: bold;
+}
+
+.task-date {
+  font-size: 0.85rem;
+  color: hsl(0, 0%, 80%);
+}
