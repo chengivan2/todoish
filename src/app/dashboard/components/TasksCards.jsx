@@ -30,7 +30,8 @@ export default function TasksCards() {
   }, []);
 
   return (
-    <div className="tasks-cards-grid">
+    <div className="tasks-cards-section">
+      <div className='not-deleted-tasks'>
       <div className="completed-tasks-card">
         <h3>Completed Tasks</h3>
         <div className="tasks-list">
@@ -52,7 +53,9 @@ export default function TasksCards() {
           ))}
         </div>
       </div>
+      </div>
 
+      <div className='deleted-tasks'>
       <div className="deleted-tasks-card">
         <h3>Deleted Tasks</h3>
         <div className="tasks-list">
@@ -62,6 +65,7 @@ export default function TasksCards() {
             </div>
           ))}
         </div>
+      </div>
       </div>
     </div>
   );
