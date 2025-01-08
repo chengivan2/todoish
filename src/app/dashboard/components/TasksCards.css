@@ -1,7 +1,6 @@
-.tasks-cards-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto 1fr;
+.not-deleted-tasks {
+  display: flex;
+  flex-direction: row;
   gap: 1rem;
 }
 
@@ -14,6 +13,7 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 1.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
 
 .deleted-tasks-card:hover,
