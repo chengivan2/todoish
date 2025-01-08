@@ -38,7 +38,7 @@
   margin-bottom: 1.5rem;
 }
 
-.deleted-tasks-list {
+.tasks-list {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
