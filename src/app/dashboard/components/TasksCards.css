@@ -1,3 +1,9 @@
+.tasks-cards-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .not-deleted-tasks {
   display: flex;
   flex-direction: row;
