@@ -23,7 +23,7 @@ export default function DeletedTasks() {
   }, []);
 
   return (
-    <>
+    <div className="tasks-cards-grid">
       <div className="deleted-tasks-card">
         <h3>Deleted Tasks</h3>
         <div className="deleted-tasks-list">
@@ -47,6 +47,6 @@ export default function DeletedTasks() {
         <h3>Pending Tasks</h3>
         <p>View your pending tasks here</p>
       </div>
-    </>
+    </div>
   );
 }
