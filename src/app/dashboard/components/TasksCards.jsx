@@ -24,6 +24,16 @@ export default function DeletedTasks() {
 
   return (
     <div className="tasks-cards-grid">
+      <div className="completed-tasks-card">
+        <h3>Completed Tasks</h3>
+        <p>View your completed tasks here</p>
+      </div>
+
+      <div className="pending-tasks-card">
+        <h3>Pending Tasks</h3>
+        <p>View your pending tasks here</p>
+      </div>
+
       <div className="deleted-tasks-card">
         <h3>Deleted Tasks</h3>
         <div className="deleted-tasks-list">
@@ -36,16 +46,6 @@ export default function DeletedTasks() {
             </div>
           ))}
         </div>
-      </div>
-
-      <div className="completed-tasks-card">
-        <h3>Completed Tasks</h3>
-        <p>View your completed tasks here</p>
-      </div>
-
-      <div className="pending-tasks-card">
-        <h3>Pending Tasks</h3>
-        <p>View your pending tasks here</p>
       </div>
     </div>
   );
