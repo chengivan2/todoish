@@ -72,3 +72,18 @@
   font-size: 0.85rem;
   color: hsl(0, 0%, 80%);
 }
+
+.restore-button {
+  padding: 0.5rem 1rem;
+  background: rgba(0, 255, 0, 0.1);
+  border: 1px solid rgba(0, 255, 0, 0.3);
+  border-radius: 6px;
+  color: #00ff00;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.3s ease;
+}
+
+.restore-button:hover {
+  background: rgba(0, 255, 0, 0.15);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}

@@ -29,6 +29,23 @@ export default function TasksCards() {
     fetchTasks();
   }, []);
 
+  const handleRestore = async (taskId) => {
+    try {
+      const response = await fetch(`/api/tasks/${taskId}/restore`, {
+        method: 'PATCH',
+      });
+
+      if (response.ok) {
+        setDeletedTasks(deletedTasks.filter(task => task.id !== taskId));
+        // Optionally, refetch tasks to update the completed/incomplete lists
+      } else {
+        console.error('Failed to restore task');
+      }
+    } catch (error) {
+      console.error('Error restoring task:', error);
+    }
+  };
+
   return (
     <div className="tasks-cards-section">
       <div className='not-deleted-tasks'>
@@ -62,6 +79,7 @@ export default function TasksCards() {
           {deletedTasks.map(task => (
             <div key={task.id} className="task-item">
               <span className="task-title">{task.title}</span>
+              <button className="restore-button" onClick={() => handleRestore(task.id)}>Restore</button>
             </div>
           ))}
         </div>
