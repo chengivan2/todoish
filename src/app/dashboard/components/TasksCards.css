@@ -87,3 +87,9 @@
   background: rgba(0, 255, 0, 0.15);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
+
+@media (max-width: 768px) {
+  .tasks-cards-section {
+    flex-direction: column;
+  }
+}
