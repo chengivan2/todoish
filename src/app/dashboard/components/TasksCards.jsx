@@ -92,7 +92,7 @@ export default function TasksCards() {
   return (
     <div className="tasks-cards-section">
       <div className="not-deleted-tasks">
-        <div className="completed-tasks-card">
+        <div id="completed-tasks-card" className="completed-tasks-card">
           <h3>Completed Tasks</h3>
           <div className="tasks-list">
             {completedTasks.map((task) => (
@@ -103,7 +103,7 @@ export default function TasksCards() {
           </div>
         </div>
 
-        <div className="incomplete-tasks-card">
+        <div id="incomplete-tasks-card" className="incomplete-tasks-card">
           <h3>Incomplete Tasks</h3>
           <div className="tasks-list">
             {incompleteTasks.map((task) => (
@@ -131,7 +131,7 @@ export default function TasksCards() {
         </div>
       </div>
 
-      <div className="deleted-tasks-card">
+      <div id="deleted-tasks-card" className="deleted-tasks-card">
         <h3>Deleted Tasks</h3>
         <div className="tasks-list">
           {deletedTasks.map((task) => (
