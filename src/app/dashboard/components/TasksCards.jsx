@@ -90,7 +90,7 @@ export default function TasksCards() {
   };
 
   return (
-    <div className="tasks-cards-grid">
+    <div className="tasks-cards-section">
       <div className="not-deleted-tasks">
         <div className="completed-tasks-card">
           <h3>Completed Tasks</h3>
