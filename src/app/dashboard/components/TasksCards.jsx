@@ -111,14 +111,14 @@ export default function TasksCards() {
                 <span className="task-title">{task.title}</span>
                 <div className="task-actions">
                   <button
-                    className="icon-button"
+                    className="icon-button check"
                     onClick={() => handleComplete(task.id)}
                     title="I'm done"
                   >
                     <CheckIcon />
                   </button>
                   <button
-                    className="icon-button"
+                    className="icon-button trash"
                     onClick={() => handleDelete(task.id)}
                     title="Delete"
                   >

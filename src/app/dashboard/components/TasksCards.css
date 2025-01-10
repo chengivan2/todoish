@@ -99,12 +99,19 @@
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 50%;
-  color: #fff;
   cursor: pointer;
   transition: background-color 0.2s ease, box-shadow 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.icon-button.check {
+  color: #00ff00; /* Green for complete */
+}
+
+.icon-button.trash {
+  color: #ff0000; /* Red for delete */
 }
 
 .icon-button:hover {
