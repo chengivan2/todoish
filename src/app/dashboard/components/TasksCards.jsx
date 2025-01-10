@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
-import { CheckIcon, TrashIcon } from '@radix-ui/react-icons';
-import './TasksCards.css';
+import { useEffect, useState } from "react";
+import { CheckIcon, TrashIcon } from "@radix-ui/react-icons";
+import "./TasksCards.css";
 
 export default function TasksCards() {
   const [deletedTasks, setDeletedTasks] = useState([]);
@@ -10,20 +10,24 @@ export default function TasksCards() {
   useEffect(() => {
     async function fetchTasks() {
       try {
-        const deletedResponse = await fetch('/api/tasks/deleted');
+        const deletedResponse = await fetch("/api/tasks/deleted");
         if (deletedResponse.ok) {
           const deletedData = await deletedResponse.json();
           setDeletedTasks(deletedData);
         }
 
-        const tasksResponse = await fetch('/api/tasks');
+        const tasksResponse = await fetch("/api/tasks");
         if (tasksResponse.ok) {
           const tasksData = await tasksResponse.json();
-          setCompletedTasks(tasksData.filter(task => task.completed).slice(0, 10));
-          setIncompleteTasks(tasksData.filter(task => !task.completed).slice(0, 10));
+          setCompletedTasks(
+            tasksData.filter((task) => task.completed).slice(0, 10)
+          );
+          setIncompleteTasks(
+            tasksData.filter((task) => !task.completed).slice(0, 10)
+          );
         }
       } catch (error) {
-        console.error('Error fetching tasks:', error);
+        console.error("Error fetching tasks:", error);
       }
     }
 
@@ -33,93 +37,112 @@ export default function TasksCards() {
   const handleComplete = async (taskId) => {
     try {
       const response = await fetch(`/api/tasks/${taskId}/toggle`, {
-        method: 'PATCH',
+        method: "PATCH",
       });
 
       if (response.ok) {
-        setIncompleteTasks(incompleteTasks.filter(task => task.id !== taskId));
+        setIncompleteTasks(
+          incompleteTasks.filter((task) => task.id !== taskId)
+        );
         // Optionally, refetch tasks to update the completed list
       } else {
-        console.error('Failed to complete task');
+        console.error("Failed to complete task");
       }
     } catch (error) {
-      console.error('Error completing task:', error);
+      console.error("Error completing task:", error);
     }
   };
 
   const handleDelete = async (taskId) => {
     try {
       const response = await fetch(`/api/tasks/${taskId}`, {
-        method: 'DELETE',
+        method: "DELETE",
       });
 
       if (response.ok) {
-        setIncompleteTasks(incompleteTasks.filter(task => task.id !== taskId));
+        setIncompleteTasks(
+          incompleteTasks.filter((task) => task.id !== taskId)
+        );
         // Optionally, refetch tasks to update the deleted list
       } else {
-        console.error('Failed to delete task');
+        console.error("Failed to delete task");
       }
     } catch (error) {
-      console.error('Error deleting task:', error);
+      console.error("Error deleting task:", error);
     }
   };
 
   const handleRestore = async (taskId) => {
     try {
       const response = await fetch(`/api/tasks/${taskId}/restore`, {
-        method: 'PATCH',
+        method: "PATCH",
       });
 
       if (response.ok) {
-        setDeletedTasks(deletedTasks.filter(task => task.id !== taskId));
+        setDeletedTasks(deletedTasks.filter((task) => task.id !== taskId));
         // Optionally, refetch tasks to update the incomplete list
       } else {
-        console.error('Failed to restore task');
+        console.error("Failed to restore task");
       }
     } catch (error) {
-      console.error('Error restoring task:', error);
+      console.error("Error restoring task:", error);
     }
   };
 
   return (
     <div className="tasks-cards-grid">
-      <div className="completed-tasks-card">
-        <h3>Completed Tasks</h3>
-        <div className="tasks-list">
-          {completedTasks.map(task => (
-            <div key={task.id} className="task-item">
-              <span className="task-title">{task.title}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="incomplete-tasks-card">
-        <h3>Incomplete Tasks</h3>
-        <div className="tasks-list">
-          {incompleteTasks.map(task => (
-            <div key={task.id} className="task-item">
-              <span className="task-title">{task.title}</span>
-              <div className="task-actions">
-                <button className="icon-button" onClick={() => handleComplete(task.id)} title="I'm done">
-                  <CheckIcon />
-                </button>
-                <button className="icon-button" onClick={() => handleDelete(task.id)} title="Delete">
-                  <TrashIcon />
-                </button>
+      <div className="not-deleted-tasks">
+        <div className="completed-tasks-card">
+          <h3>Completed Tasks</h3>
+          <div className="tasks-list">
+            {completedTasks.map((task) => (
+              <div key={task.id} className="task-item">
+                <span className="task-title">{task.title}</span>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+        </div>
+
+        <div className="incomplete-tasks-card">
+          <h3>Incomplete Tasks</h3>
+          <div className="tasks-list">
+            {incompleteTasks.map((task) => (
+              <div key={task.id} className="task-item">
+                <span className="task-title">{task.title}</span>
+                <div className="task-actions">
+                  <button
+                    className="icon-button"
+                    onClick={() => handleComplete(task.id)}
+                    title="I'm done"
+                  >
+                    <CheckIcon />
+                  </button>
+                  <button
+                    className="icon-button"
+                    onClick={() => handleDelete(task.id)}
+                    title="Delete"
+                  >
+                    <TrashIcon />
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
       <div className="deleted-tasks-card">
         <h3>Deleted Tasks</h3>
         <div className="tasks-list">
-          {deletedTasks.map(task => (
+          {deletedTasks.map((task) => (
             <div key={task.id} className="task-item">
               <span className="task-title">{task.title}</span>
-              <button className="restore-button" onClick={() => handleRestore(task.id)}>Restore</button>
+              <button
+                className="restore-button"
+                onClick={() => handleRestore(task.id)}
+              >
+                Restore
+              </button>
             </div>
           ))}
         </div>
