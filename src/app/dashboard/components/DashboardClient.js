@@ -66,14 +66,14 @@ export default function DashboardClient({ user, stats, tasks }) {
           title="Open Tasks"
           value={stats.totalOpen}
           description="Tasks waiting to be completed"
-          buttonLabel="View Incomplete Tasks"
+          buttonLabel="Catch Up"
           buttonTarget="#incomplete-tasks-card"
         />
         <StatsCard
           title="Completed"
           value={stats.completed}
           description="Tasks you've finished"
-          buttonLabel="View Completed Tasks"
+          buttonLabel="Review"
           buttonTarget="#completed-tasks-card"
         />
         <StatsCard
