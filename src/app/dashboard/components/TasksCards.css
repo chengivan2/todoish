@@ -10,6 +10,11 @@
   gap: 1rem;
 }
 
+.completed-tasks-card div.tasks-list div.task-item span {
+  text-decoration: line-through;
+  color: hsl(20, 100%, 70%);
+}
+
 .deleted-tasks-card,
 .completed-tasks-card,
 .incomplete-tasks-card {
