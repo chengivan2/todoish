@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { CheckIcon, TrashIcon } from '@radix-ui/react-icons';
 import './TasksCards.css';
 
 export default function TasksCards() {
@@ -29,6 +30,40 @@ export default function TasksCards() {
     fetchTasks();
   }, []);
 
+  const handleComplete = async (taskId) => {
+    try {
+      const response = await fetch(`/api/tasks/${taskId}/toggle`, {
+        method: 'PATCH',
+      });
+
+      if (response.ok) {
+        setIncompleteTasks(incompleteTasks.filter(task => task.id !== taskId));
+        // Optionally, refetch tasks to update the completed list
+      } else {
+        console.error('Failed to complete task');
+      }
+    } catch (error) {
+      console.error('Error completing task:', error);
+    }
+  };
+
+  const handleDelete = async (taskId) => {
+    try {
+      const response = await fetch(`/api/tasks/${taskId}`, {
+        method: 'DELETE',
+      });
+
+      if (response.ok) {
+        setIncompleteTasks(incompleteTasks.filter(task => task.id !== taskId));
+        // Optionally, refetch tasks to update the deleted list
+      } else {
+        console.error('Failed to delete task');
+      }
+    } catch (error) {
+      console.error('Error deleting task:', error);
+    }
+  };
+
   const handleRestore = async (taskId) => {
     try {
       const response = await fetch(`/api/tasks/${taskId}/restore`, {
@@ -37,7 +72,7 @@ export default function TasksCards() {
 
       if (response.ok) {
         setDeletedTasks(deletedTasks.filter(task => task.id !== taskId));
-        // Optionally, refetch tasks to update the completed/incomplete lists
+        // Optionally, refetch tasks to update the incomplete list
       } else {
         console.error('Failed to restore task');
       }
@@ -47,8 +82,7 @@ export default function TasksCards() {
   };
 
   return (
-    <div className="tasks-cards-section">
-      <div className='not-deleted-tasks'>
+    <div className="tasks-cards-grid">
       <div className="completed-tasks-card">
         <h3>Completed Tasks</h3>
         <div className="tasks-list">
@@ -66,13 +100,19 @@ export default function TasksCards() {
           {incompleteTasks.map(task => (
             <div key={task.id} className="task-item">
               <span className="task-title">{task.title}</span>
+              <div className="task-actions">
+                <button className="icon-button" onClick={() => handleComplete(task.id)} title="I'm done">
+                  <CheckIcon />
+                </button>
+                <button className="icon-button" onClick={() => handleDelete(task.id)} title="Delete">
+                  <TrashIcon />
+                </button>
+              </div>
             </div>
           ))}
         </div>
       </div>
-      </div>
 
-      <div className='deleted-tasks'>
       <div className="deleted-tasks-card">
         <h3>Deleted Tasks</h3>
         <div className="tasks-list">
@@ -83,7 +123,6 @@ export default function TasksCards() {
             </div>
           ))}
         </div>
-      </div>
       </div>
     </div>
   );
