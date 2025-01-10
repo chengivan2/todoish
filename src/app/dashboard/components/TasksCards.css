@@ -89,7 +89,7 @@
 }
 
 @media (max-width: 768px) {
-  .tasks-cards-section {
+  .not-deleted-tasks {
     flex-direction: column;
   }
 }
