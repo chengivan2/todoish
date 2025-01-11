@@ -112,11 +112,11 @@
 }
 
 .icon-button.check {
-  color: #00ff00; /* Green for complete */
+  color: #00ff00;
 }
 
 .icon-button.trash {
-  color: #ff0000; /* Red for delete */
+  color: #ff0000;
 }
 
 .icon-button.revisit {
