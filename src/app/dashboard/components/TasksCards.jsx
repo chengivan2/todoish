@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { CheckIcon, TrashIcon, Pencil1Icon, ArrowCounterClockwiseIcon } from "@radix-ui/react-icons";
+import { CheckIcon, TrashIcon, ArrowCounterClockwiseIcon } from "@radix-ui/react-icons";
 import "./TasksCards.css";
 
 export default function TasksCards() {
@@ -45,7 +45,7 @@ export default function TasksCards() {
         setIncompleteTasks(
           incompleteTasks.filter((task) => task.id !== taskId)
         );
-        // Optionally, refetch tasks to update the completed list
+        window.location.reload();
       } else {
         console.error("Failed to complete task");
       }
@@ -64,7 +64,7 @@ export default function TasksCards() {
         setIncompleteTasks(
           incompleteTasks.filter((task) => task.id !== taskId)
         );
-        // Optionally, refetch tasks to update the deleted list
+        window.location.reload();
       } else {
         console.error("Failed to delete task");
       }
@@ -98,7 +98,7 @@ export default function TasksCards() {
 
       if (response.ok) {
         setCompletedTasks(completedTasks.filter((task) => task.id !== taskId));
-        // Optionally, refetch tasks to update the incomplete list
+        window.location.reload();
       } else {
         console.error("Failed to revisit task");
       }
