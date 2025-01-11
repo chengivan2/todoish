@@ -80,12 +80,14 @@ export default function DashboardClient({ user, stats, tasks }) {
           title="Completion Rate"
           value={`${stats.completionRate}%`}
           description="Your productivity score"
+          buttonLabel="View History"
+          buttonTarget="#main-task-list"
         />
       </section>
 
       <section className="tasks-section">
         <h2 className="tasks-title">Your Tasks</h2>
-        <TaskList initialTasks={tasks} onTaskClick={handleTaskClick} />
+        <TaskList id="main-task-list" initialTasks={tasks} onTaskClick={handleTaskClick} />
       </section>
 
       <section className="tasks-cards-section">

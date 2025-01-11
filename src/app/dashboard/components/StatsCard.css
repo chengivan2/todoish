@@ -37,9 +37,14 @@
   margin-top: 1rem;
   padding: 0.5rem 1rem;
   background-color: #ff9966;
-  color: #fff;
+  color: hsl(0, 0%, 9%);
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 5px;
+}
+
+.stats-button:hover {
+  background-color: #ffcc99;
+  color: hsl(0, 0%, 96%);
 }
 
 @media (min-width: 768px) {
