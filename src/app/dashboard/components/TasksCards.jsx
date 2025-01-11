@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { CheckIcon, TrashIcon, ArrowCounterClockwiseIcon } from "@radix-ui/react-icons";
+import { CheckIcon, TrashIcon } from "@radix-ui/react-icons";
 import "./TasksCards.css";
 
 export default function TasksCards() {
@@ -81,7 +81,7 @@ export default function TasksCards() {
 
       if (response.ok) {
         setDeletedTasks(deletedTasks.filter((task) => task.id !== taskId));
-        // Optionally, refetch tasks to update the incomplete list
+        
       } else {
         console.error("Failed to restore task");
       }
@@ -130,7 +130,7 @@ export default function TasksCards() {
                     onClick={() => handleRevisit(task.id)}
                     title="Revisit"
                   >
-                    <ArrowCounterClockwiseIcon />
+                    Revisit
                   </button>
                 </div>
               </div>
