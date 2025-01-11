@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { CheckIcon, TrashIcon } from "@radix-ui/react-icons";
+import { CheckIcon, TrashIcon, Pencil1Icon, ArrowCounterClockwiseIcon } from "@radix-ui/react-icons";
 import "./TasksCards.css";
 
 export default function TasksCards() {
   const [deletedTasks, setDeletedTasks] = useState([]);
   const [completedTasks, setCompletedTasks] = useState([]);
   const [incompleteTasks, setIncompleteTasks] = useState([]);
+  const [selectedTask, setSelectedTask] = useState(null);
 
   useEffect(() => {
     async function fetchTasks() {
@@ -89,6 +90,31 @@ export default function TasksCards() {
     }
   };
 
+  const handleRevisit = async (taskId) => {
+    try {
+      const response = await fetch(`/api/tasks/${taskId}/toggle`, {
+        method: "PATCH",
+      });
+
+      if (response.ok) {
+        setCompletedTasks(completedTasks.filter((task) => task.id !== taskId));
+        // Optionally, refetch tasks to update the incomplete list
+      } else {
+        console.error("Failed to revisit task");
+      }
+    } catch (error) {
+      console.error("Error revisiting task:", error);
+    }
+  };
+
+  const openTaskOverlay = (task) => {
+    setSelectedTask(task);
+  };
+
+  const closeTaskOverlay = () => {
+    setSelectedTask(null);
+  };
+
   return (
     <div className="tasks-cards-section">
       <div className="not-deleted-tasks">
@@ -98,6 +124,15 @@ export default function TasksCards() {
             {completedTasks.map((task) => (
               <div key={task.id} className="task-item">
                 <span className="task-title">{task.title}</span>
+                <div className="task-actions">
+                  <button
+                    className="icon-button revisit"
+                    onClick={() => handleRevisit(task.id)}
+                    title="Revisit"
+                  >
+                    <ArrowCounterClockwiseIcon />
+                  </button>
+                </div>
               </div>
             ))}
           </div>
