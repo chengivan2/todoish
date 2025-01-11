@@ -32,7 +32,16 @@
   margin-top: 0.25rem;
 }
 
-/* Responsive grid layout */
+.stats-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #ff9966;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
 @media (min-width: 768px) {
   .stats-card {
     flex: 1;
