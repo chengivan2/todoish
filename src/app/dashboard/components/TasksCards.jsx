@@ -167,7 +167,7 @@ export default function TasksCards() {
       </div>
 
       <div id="deleted-tasks-card" className="deleted-tasks-card">
-        <h3>Deleted Tasks</h3>
+        <h3>Recently Deleted Tasks</h3>
         <div className="tasks-list">
           {deletedTasks.map((task) => (
             <div key={task.id} className="task-item">
