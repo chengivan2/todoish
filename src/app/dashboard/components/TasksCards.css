@@ -45,6 +45,24 @@
   width: 100%;
 }
 
+.empty-message-container p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: hsla(0, 0%, 70%, 0.5);
+}
+
+div.empty-message-icon {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+div.empty-message-icon svg {
+  width: 3rem;
+  height: 3rem;
+  color: hsla(0, 0%, 70%, 0.5);
+}
+
 .deleted-tasks-card {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);

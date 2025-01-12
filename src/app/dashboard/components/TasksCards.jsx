@@ -122,6 +122,10 @@ export default function TasksCards() {
           <div className="tasks-list">
             {completedTasks.length === 0 ? (
               <div className="empty-message-container">
+                <div className="empty-message-icon">
+                  <CalendarIcon />
+                  <CheckIcon />
+                </div> 
                 <p className="empty-message">No complete tasks available.</p>
               </div>
             ) : (
