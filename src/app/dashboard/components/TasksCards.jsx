@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { CheckIcon, TrashIcon } from "@radix-ui/react-icons";
+import { CalendarIcon, CheckIcon, TrashIcon } from "@radix-ui/react-icons";
 import "./TasksCards.css";
 
 export default function TasksCards() {
@@ -122,7 +122,7 @@ export default function TasksCards() {
           <div className="tasks-list">
             {completedTasks.length === 0 ? (
               <div className="empty-message-container">
-                <p className="empty-message">No incomplete tasks available.</p>
+                <p className="empty-message">No complete tasks available.</p>
               </div>
             ) : (
               completedTasks.map((task) => (
@@ -148,7 +148,10 @@ export default function TasksCards() {
           <div className="tasks-list">
             {incompleteTasks.length === 0 ? (
               <div className="empty-message-container">
-                <p className="empty-message">No incomplete tasks available.</p>
+                <div className="empty-message-icon">
+                  <CalendarIcon />
+                </div>
+                  <p className="empty-message">No incomplete tasks available.</p>
               </div>
             ) : (
               incompleteTasks.map((task) => (
@@ -186,7 +189,10 @@ export default function TasksCards() {
         <div className="tasks-list">
           {deletedTasks.length === 0 ? (
             <div className="empty-message-container">
-              <p className="empty-message">No incomplete tasks available.</p>
+              <div className="empty-message-icon">
+                <TrashIcon />
+              </div>
+              <p className="empty-message">You haven't deleted any tasks yet.</p>
             </div>
           ) : (
             deletedTasks.map((task) => (
