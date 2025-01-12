@@ -173,12 +173,23 @@ div.tasks-list {
 }
 
 @media (max-width: 480px) {
+
+  .tasks-cards-title {
+    font-size: 1.2rem;
+  }
+
   .empty-message-container p {
     font-size: 0.9rem;
   }
 
   .task-title {
     font-size: 0.9rem;
+  }
+
+  .deleted-tasks-card,
+  .completed-tasks-card,
+  .incomplete-tasks-card {
+    padding: 1.5rem 1rem;
   }
 }
 
