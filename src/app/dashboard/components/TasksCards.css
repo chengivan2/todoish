@@ -172,5 +172,9 @@ div.tasks-list {
   .empty-message-container p {
     font-size: 0.9rem;
   }
+
+  .task-title {
+    font-size: 0.9rem;
+  }
 }
 
