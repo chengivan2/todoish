@@ -81,7 +81,6 @@ export default function TasksCards() {
 
       if (response.ok) {
         setDeletedTasks(deletedTasks.filter((task) => task.id !== taskId));
-        
       } else {
         console.error("Failed to restore task");
       }
@@ -122,7 +121,9 @@ export default function TasksCards() {
           <h3>Completed Tasks</h3>
           <div className="tasks-list">
             {completedTasks.length === 0 ? (
-              <p className="empty-message">No completed tasks available.</p>
+              <div className="empty-message-container">
+                <p className="empty-message">No incomplete tasks available.</p>
+              </div>
             ) : (
               completedTasks.map((task) => (
                 <div key={task.id} className="task-item">
@@ -146,10 +147,16 @@ export default function TasksCards() {
           <h3>Incomplete Tasks</h3>
           <div className="tasks-list">
             {incompleteTasks.length === 0 ? (
-              <p className="empty-message">No incomplete tasks available.</p>
+              <div className="empty-message-container">
+                <p className="empty-message">No incomplete tasks available.</p>
+              </div>
             ) : (
               incompleteTasks.map((task) => (
-                <div key={task.id} className="task-item" onClick={() => openTaskOverlay(task)}>
+                <div
+                  key={task.id}
+                  className="task-item"
+                  onClick={() => openTaskOverlay(task)}
+                >
                   <span className="task-title">{task.title}</span>
                   <div className="task-actions">
                     <button
@@ -178,7 +185,9 @@ export default function TasksCards() {
         <h3>Recently Deleted Tasks</h3>
         <div className="tasks-list">
           {deletedTasks.length === 0 ? (
-            <p className="empty-message">No deleted tasks available.</p>
+            <div className="empty-message-container">
+              <p className="empty-message">No incomplete tasks available.</p>
+            </div>
           ) : (
             deletedTasks.map((task) => (
               <div key={task.id} className="task-item">
