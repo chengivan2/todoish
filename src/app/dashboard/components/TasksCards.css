@@ -81,11 +81,10 @@ div.empty-message-icon svg {
 div.tasks-list {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
-  gap: 0.5rem;
+  gap: 0.8rem;
 }
 
 .deleted-task-item {
