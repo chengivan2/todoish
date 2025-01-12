@@ -126,7 +126,7 @@ export default function TasksCards() {
                   <CalendarIcon />
                   <CheckIcon />
                 </div> 
-                <p className="empty-message">No complete tasks available.</p>
+                <p className="empty-message">You haven't completed any tasks yet.</p>
               </div>
             ) : (
               completedTasks.map((task) => (
@@ -155,7 +155,7 @@ export default function TasksCards() {
                 <div className="empty-message-icon">
                   <CalendarIcon />
                 </div>
-                  <p className="empty-message">No incomplete tasks available.</p>
+                  <p className="empty-message">You haven't added any tasks yet.</p>
               </div>
             ) : (
               incompleteTasks.map((task) => (
