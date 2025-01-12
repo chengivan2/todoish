@@ -163,3 +163,14 @@ div.tasks-list {
   display: flex;
   gap: 0.5rem;
 }
+
+@media (max-width: 768px) {
+ 
+}
+
+@media (max-width: 480px) {
+  .empty-message-container p {
+    font-size: 0.9rem;
+  }
+}
+
