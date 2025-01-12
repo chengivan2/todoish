@@ -121,47 +121,55 @@ export default function TasksCards() {
         <div id="completed-tasks-card" className="completed-tasks-card">
           <h3>Completed Tasks</h3>
           <div className="tasks-list">
-            {completedTasks.map((task) => (
-              <div key={task.id} className="task-item">
-                <span className="task-title">{task.title}</span>
-                <div className="task-actions">
-                  <button
-                    className="icon-button revisit"
-                    onClick={() => handleRevisit(task.id)}
-                    title="Revisit"
-                  >
-                    Revisit
-                  </button>
+            {completedTasks.length === 0 ? (
+              <p className="empty-message">No completed tasks available.</p>
+            ) : (
+              completedTasks.map((task) => (
+                <div key={task.id} className="task-item">
+                  <span className="task-title">{task.title}</span>
+                  <div className="task-actions">
+                    <button
+                      className="icon-button revisit"
+                      onClick={() => handleRevisit(task.id)}
+                      title="Revisit"
+                    >
+                      Revisit
+                    </button>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))
+            )}
           </div>
         </div>
 
         <div id="incomplete-tasks-card" className="incomplete-tasks-card">
           <h3>Incomplete Tasks</h3>
           <div className="tasks-list">
-            {incompleteTasks.map((task) => (
-              <div key={task.id} className="task-item">
-                <span className="task-title">{task.title}</span>
-                <div className="task-actions">
-                  <button
-                    className="icon-button check"
-                    onClick={() => handleComplete(task.id)}
-                    title="I'm done"
-                  >
-                    <CheckIcon />
-                  </button>
-                  <button
-                    className="icon-button trash"
-                    onClick={() => handleDelete(task.id)}
-                    title="Delete"
-                  >
-                    <TrashIcon />
-                  </button>
+            {incompleteTasks.length === 0 ? (
+              <p className="empty-message">No incomplete tasks available.</p>
+            ) : (
+              incompleteTasks.map((task) => (
+                <div key={task.id} className="task-item" onClick={() => openTaskOverlay(task)}>
+                  <span className="task-title">{task.title}</span>
+                  <div className="task-actions">
+                    <button
+                      className="icon-button check"
+                      onClick={() => handleComplete(task.id)}
+                      title="I'm done"
+                    >
+                      <CheckIcon />
+                    </button>
+                    <button
+                      className="icon-button trash"
+                      onClick={() => handleDelete(task.id)}
+                      title="Delete"
+                    >
+                      <TrashIcon />
+                    </button>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))
+            )}
           </div>
         </div>
       </div>
@@ -169,17 +177,21 @@ export default function TasksCards() {
       <div id="deleted-tasks-card" className="deleted-tasks-card">
         <h3>Recently Deleted Tasks</h3>
         <div className="tasks-list">
-          {deletedTasks.map((task) => (
-            <div key={task.id} className="task-item">
-              <span className="task-title">{task.title}</span>
-              <button
-                className="restore-button"
-                onClick={() => handleRestore(task.id)}
-              >
-                Restore
-              </button>
-            </div>
-          ))}
+          {deletedTasks.length === 0 ? (
+            <p className="empty-message">No deleted tasks available.</p>
+          ) : (
+            deletedTasks.map((task) => (
+              <div key={task.id} className="task-item">
+                <span className="task-title">{task.title}</span>
+                <button
+                  className="restore-button"
+                  onClick={() => handleRestore(task.id)}
+                >
+                  Restore
+                </button>
+              </div>
+            ))
+          )}
         </div>
       </div>
     </div>
