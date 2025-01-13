@@ -6,6 +6,7 @@ import SignOutButton from "@/app/components/SignOutButton";
 import "./DashboardClient.css";
 import StatsCard from "./StatsCard";
 import TasksCards from "./TasksCards";
+import DashboardHeader from "./DashboardHeader";
 
 export default function DashboardClient({ user, stats, tasks }) {
   const [selectedTask, setSelectedTask] = useState(null);
@@ -57,8 +58,7 @@ export default function DashboardClient({ user, stats, tasks }) {
   return (
     <div className="dashboard">
       <header className="dashboard-header">
-        <h1>Welcome back, {user.given_name || user.email}</h1>
-        <SignOutButton />
+        <DashboardHeader />
       </header>
 
       <section className="stats-grid">
