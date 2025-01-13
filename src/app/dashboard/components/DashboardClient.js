@@ -57,9 +57,12 @@ export default function DashboardClient({ user, stats, tasks }) {
 
   return (
     <div className="dashboard">
-      <header className="dashboard-header">
+
         <DashboardHeader />
-      </header>
+
+        <section className="dashboard-hero">
+            <h1>Welcome back, {user.given_name || user.email}</h1>
+        </section>
 
       <section className="stats-grid">
         <StatsCard
