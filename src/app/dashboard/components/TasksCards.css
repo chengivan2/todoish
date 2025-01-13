@@ -108,9 +108,8 @@ div.tasks-list {
   font-weight: bold;
 }
 
-.task-date {
-  font-size: 0.85rem;
-  color: hsl(0, 0%, 80%);
+div#incomplete-tasks-card div.tasks-list div.task-item div.task-actions button {
+  border-radius: 50%;
 }
 
 .restore-button {
@@ -181,7 +180,7 @@ div.tasks-list {
   }
 
   .task-title {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 
   .deleted-tasks-card,
@@ -189,8 +188,4 @@ div.tasks-list {
   .incomplete-tasks-card {
     padding: 1.5rem 1rem;
   }
-}
-
-div#incomplete-tasks-card div.tasks-list div.task-item div.task-actions button {
-  border-radius: 50%;
 }

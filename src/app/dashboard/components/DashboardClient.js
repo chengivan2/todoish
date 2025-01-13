@@ -57,12 +57,11 @@ export default function DashboardClient({ user, stats, tasks }) {
 
   return (
     <div className="dashboard">
+      <DashboardHeader />
 
-        <DashboardHeader />
-
-        <section className="dashboard-hero">
-            <h1>Welcome back, {user.given_name || user.email}</h1>
-        </section>
+      <section className="dashboard-hero">
+        <h2>Welcome back, {user.given_name || user.email}</h2>
+      </section>
 
       <section className="stats-grid">
         <StatsCard
@@ -90,12 +89,16 @@ export default function DashboardClient({ user, stats, tasks }) {
 
       <section className="tasks-section">
         <h2 className="tasks-title">Your Tasks</h2>
-        <TaskList id="main-task-list" initialTasks={tasks} onTaskClick={handleTaskClick} />
+        <TaskList
+          id="main-task-list"
+          initialTasks={tasks}
+          onTaskClick={handleTaskClick}
+        />
       </section>
 
       <section className="tasks-cards-section">
         <div className="tasks-cards-title">
-        <h2>This is how we are doing</h2>
+          <h2>This is how we are doing</h2>
         </div>
 
         <div className="tasks-cards-container">
