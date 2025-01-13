@@ -125,8 +125,10 @@ export default function TasksCards() {
                 <div className="empty-message-icon">
                   <CalendarIcon />
                   <CheckIcon />
-                </div> 
-                <p className="empty-message">You haven't completed any tasks yet.</p>
+                </div>
+                <p className="empty-message">
+                  You haven't completed any tasks yet.
+                </p>
               </div>
             ) : (
               completedTasks.map((task) => (
@@ -155,7 +157,9 @@ export default function TasksCards() {
                 <div className="empty-message-icon">
                   <CalendarIcon />
                 </div>
-                  <p className="empty-message">You haven't added any tasks yet.</p>
+                <p className="empty-message">
+                  You haven't added any tasks yet.
+                </p>
               </div>
             ) : (
               incompleteTasks.map((task) => (
@@ -196,7 +200,9 @@ export default function TasksCards() {
               <div className="empty-message-icon">
                 <TrashIcon />
               </div>
-              <p className="empty-message">You haven't deleted any tasks yet.</p>
+              <p className="empty-message">
+                You haven't deleted any tasks yet.
+              </p>
             </div>
           ) : (
             deletedTasks.map((task) => (
