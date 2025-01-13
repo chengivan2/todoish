@@ -169,11 +169,9 @@ div.tasks-list {
 }
 
 @media (max-width: 768px) {
- 
 }
 
 @media (max-width: 480px) {
-
   .tasks-cards-title {
     font-size: 1.2rem;
   }
@@ -193,3 +191,6 @@ div.tasks-list {
   }
 }
 
+div#incomplete-tasks-card div.tasks-list div.task-item div.task-actions button {
+  border-radius: 50%;
+}
