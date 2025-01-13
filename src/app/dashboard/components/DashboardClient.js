@@ -63,7 +63,7 @@ export default function DashboardClient({ user, stats, tasks }) {
         <h2>Welcome back, {user.given_name || user.email}</h2>
       </section>
 
-      <section className="stats-grid">
+      <section className="stats-grid" id="stats">
         <StatsCard
           title="Open Tasks"
           value={stats.totalOpen}
