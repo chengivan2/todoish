@@ -59,7 +59,7 @@ export default function DashboardClient({ user, stats, tasks }) {
     <div className="dashboard">
       <DashboardHeader />
 
-      <section className="dashboard-hero">
+      <section className="dashboard-welcome-message">
         <h2>Welcome back, {user.given_name || user.email}</h2>
       </section>
 

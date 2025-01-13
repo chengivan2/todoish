@@ -17,6 +17,10 @@
   font-weight: 700;
 }
 
+section.dashboard-welcome-message {
+  padding: 1.5rem 0;
+}
+
 .stats-grid {
   display: grid;
   gap: 1.5rem;
