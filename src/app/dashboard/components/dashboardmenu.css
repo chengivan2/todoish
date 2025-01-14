@@ -2,6 +2,12 @@ button {
   all: unset;
 }
 
+.dashboard-menu-hamburger-icon svg,
+.dashboard-menu-close-icon svg {
+  width: 28;
+  height: 28;
+}
+
 .dashboard-menu-hamburger-icon,
 .dashboard-menu-close-icon {
   cursor: pointer;
