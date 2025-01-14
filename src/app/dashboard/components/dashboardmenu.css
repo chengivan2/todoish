@@ -24,7 +24,6 @@ svg.dashboard-menu-close-icon {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  justify-content: center;
   align-items: center;
   box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px,
     hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
