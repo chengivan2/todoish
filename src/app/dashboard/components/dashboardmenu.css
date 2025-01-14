@@ -2,8 +2,8 @@ button {
   all: unset;
 }
 
-.dashboard-menu-hamburger-icon svg,
-.dashboard-menu-close-icon svg {
+svg.dashboard-menu-hamburger-icon,
+svg.dashboard-menu-close-icon {
   width: 32px;
   height: 32px;
 }
