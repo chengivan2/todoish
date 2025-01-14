@@ -2,6 +2,10 @@ button {
   all: unset;
 }
 
+.dashboard-menu-hamburger-icon, .dashboard-menu-close-icon {
+  cursor: pointer;
+}
+
 .AlertDialogOverlay {
   background-color: #181818;
   position: fixed;
