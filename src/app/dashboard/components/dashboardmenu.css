@@ -71,6 +71,10 @@ svg.dashboard-menu-close-icon {
   color: #f5f5f5;
 }
 
+.dashboard-menu-links-container button:hover {
+  color: #ffcc99;
+}
+
 @keyframes overlayShow {
   from {
     opacity: 0;
