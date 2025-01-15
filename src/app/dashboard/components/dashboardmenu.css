@@ -67,6 +67,10 @@ svg.dashboard-menu-close-icon {
   gap: 1rem;
 }
 
+AlertDialog.Action a {
+  font-size: 3rem;
+}
+
 @keyframes overlayShow {
   from {
     opacity: 0;
