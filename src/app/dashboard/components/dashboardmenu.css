@@ -67,58 +67,6 @@ svg.dashboard-menu-close-icon {
   gap: 1rem;
 }
 
-.Button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  padding: 0 15px;
-  font-size: 15px;
-  line-height: 1;
-  font-weight: 500;
-  height: 35px;
-}
-
-.Button.violet {
-  background-color: white;
-  color: violet;
-  box-shadow: 0 2px 10px black;
-}
-
-.Button.violet:hover {
-  background-color: magenta;
-}
-
-.Button.violet:focus {
-  box-shadow: 0 0 0 2px black;
-}
-
-.Button.red {
-  background-color: red;
-  color: red;
-}
-
-.Button.red:hover {
-  background-color: red;
-}
-
-.Button.red:focus {
-  box-shadow: 0 0 0 2px red;
-}
-
-.Button.mauve {
-  background-color: magenta;
-  color: magenta;
-}
-
-.Button.mauve:hover {
-  background-color: magenta;
-}
-
-.Button.mauve:focus {
-  box-shadow: 0 0 0 2px magenta;
-}
-
 @keyframes overlayShow {
   from {
     opacity: 0;
