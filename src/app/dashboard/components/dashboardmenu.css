@@ -63,7 +63,9 @@ svg.dashboard-menu-close-icon {
   gap: 1rem;
 }
 
-AlertDialog.Action a {
+button {
+  background-color: transparent;
+  padding: 1em;
   font-size: 3rem;
 }
 
