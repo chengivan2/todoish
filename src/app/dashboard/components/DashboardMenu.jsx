@@ -25,10 +25,10 @@ const DashboardMenu = () => (
         </div>
 
         <div className="dashboard-menu-links-container">
-          <a href="#incomplete-tasks-card">Incomplete Tasks</a>
-          <a href="#completed-tasks-card">Completed Tasks</a>
-          <a href="#deleted-tasks-card">Deleted Tasks</a>
-          <a href="#stats">Stats</a>
+          <AlertDialog.Action><a href="#incomplete-tasks-card">Incomplete Tasks</a></AlertDialog.Action>
+          <AlertDialog.Action><a href="#completed-tasks-card">Completed Tasks</a></AlertDialog.Action>
+          <AlertDialog.Action><a href="#deleted-tasks-card">Deleted Tasks</a></AlertDialog.Action>
+          <AlertDialog.Action><a href="#stats">Stats</a></AlertDialog.Action>
         </div>
 
       </AlertDialog.Content>
