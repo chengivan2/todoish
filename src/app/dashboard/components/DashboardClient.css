@@ -98,13 +98,16 @@ section.dashboard-welcome-message {
   margin-bottom: 1.5rem;
 }
 
+.task-details input {
+  margin-bottom: 1rem;
+}
+
 .task-details input, textarea {
   padding: 1rem;
   background-color: hsla(0, 0%, 100%, 0.1);
   border: 2px solid #ffcc99;
   border-radius: 6px;
   color: #f5f5f5;
-  margin-bottom: 1rem;
 }
 
 .task-details input, textarea:focus {
