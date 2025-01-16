@@ -113,43 +113,6 @@ export default function TaskList({ initialTasks, onTaskClick }) {
           </div>
         </div>
       ))}
-
-      {selectedTask && (
-        <div className="task-overlay" onClick={closeOverlay}>
-          <div className="task-details" onClick={(e) => e.stopPropagation()}>
-            {isEditing ? (
-              <>
-                <input
-                  type="text"
-                  value={editTitle}
-                  onChange={(e) => setEditTitle(e.target.value)}
-                  placeholder="Edit title"
-                  className="edit-task-title-input"
-                />
-                <textarea
-                  value={editDescription}
-                  onChange={(e) => setEditDescription(e.target.value)}
-                  placeholder="Edit description"
-                  className="edit-task-description-input"
-                />
-                <div className="task-buttons">
-                  <button onClick={handleUpdate}>Save</button>
-                  <button onClick={closeOverlay}>Cancel</button>
-                </div>
-              </>
-            ) : (
-              <>
-                <h2>{selectedTask.title}</h2>
-                <p>{selectedTask.description}</p>
-                <div className="task-buttons">
-                  <button onClick={handleEdit}>Edit</button>
-                  <button onClick={closeOverlay}>Close</button>
-                </div>
-              </>
-            )}
-          </div>
-        </div>
-      )}
     </div>
   );
 } 
