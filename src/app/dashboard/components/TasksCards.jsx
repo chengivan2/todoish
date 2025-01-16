@@ -126,7 +126,6 @@ export default function TasksCards({ onTaskClick }) {
               <div className="empty-message-container">
                 <div className="empty-message-icon">
                   <CalendarIcon />
-                  <CheckIcon />
                 </div>
                 <p className="empty-message">
                   You haven't completed any tasks yet.
@@ -158,7 +157,6 @@ export default function TasksCards({ onTaskClick }) {
               <div className="empty-message-container">
                 <div className="empty-message-icon">
                   <CalendarIcon />
-                  <ExclamationIcon />
                 </div>
                 <p className="empty-message">
                   You haven't added any tasks yet.
@@ -202,7 +200,6 @@ export default function TasksCards({ onTaskClick }) {
             <div className="empty-message-container">
               <div className="empty-message-icon">
                 <TrashIcon />
-                <InformationCircleIcon />
               </div>
               <p className="empty-message">
                 You haven't deleted any tasks yet.
