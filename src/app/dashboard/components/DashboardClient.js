@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import React, { useState } from "react";
 import TaskList from "./TaskList";
 import AddTaskButton from "./AddTaskButton";
 import SignOutButton from "@/app/components/SignOutButton";
@@ -102,7 +102,7 @@ export default function DashboardClient({ user, stats, tasks }) {
         </div>
 
         <div className="tasks-cards-container">
-          <TasksCards className="tasks-cards" />
+          <TasksCards onTaskClick={handleTaskClick} />
         </div>
       </section>
 

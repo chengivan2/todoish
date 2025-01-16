@@ -2,11 +2,14 @@ import { useEffect, useState } from "react";
 import { CalendarIcon, CheckIcon, TrashIcon } from "@radix-ui/react-icons";
 import "./TasksCards.css";
 
-export default function TasksCards() {
+export default function TasksCards({ onTaskClick }) {
   const [deletedTasks, setDeletedTasks] = useState([]);
   const [completedTasks, setCompletedTasks] = useState([]);
   const [incompleteTasks, setIncompleteTasks] = useState([]);
   const [selectedTask, setSelectedTask] = useState(null);
+  const [isEditing, setIsEditing] = useState(false);
+  const [editTitle, setEditTitle] = useState("");
+  const [editDescription, setEditDescription] = useState("");
 
   useEffect(() => {
     async function fetchTasks() {
@@ -108,10 +111,9 @@ export default function TasksCards() {
 
   const openTaskOverlay = (task) => {
     setSelectedTask(task);
-  };
-
-  const closeTaskOverlay = () => {
-    setSelectedTask(null);
+    setEditTitle(task.title);
+    setEditDescription(task.description);
+    onTaskClick(task);
   };
 
   return (
@@ -132,7 +134,7 @@ export default function TasksCards() {
               </div>
             ) : (
               completedTasks.map((task) => (
-                <div key={task.id} className="task-item">
+                <div key={task.id} className="task-item" onClick={() => openTaskOverlay(task)}>
                   <span className="task-title">{task.title}</span>
                   <div className="task-actions">
                     <button
