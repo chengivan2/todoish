@@ -108,6 +108,7 @@ section.dashboard-welcome-message {
   border: 2px solid #ffcc99;
   border-radius: 6px;
   color: #f5f5f5;
+  font-size: 1.25rem;
 }
 
 .task-details input, textarea:focus {
