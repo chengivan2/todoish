@@ -158,6 +158,7 @@ export default function TasksCards({ onTaskClick }) {
               <div className="empty-message-container">
                 <div className="empty-message-icon">
                   <CalendarIcon />
+                  <ExclamationIcon />
                 </div>
                 <p className="empty-message">
                   You haven't added any tasks yet.
