@@ -1,5 +1,10 @@
 import { useEffect, useState } from "react";
-import { CalendarIcon, CheckCircledIcon, CheckIcon, TrashIcon } from "@radix-ui/react-icons";
+import {
+  CalendarIcon,
+  CheckCircledIcon,
+  CheckIcon,
+  TrashIcon,
+} from "@radix-ui/react-icons";
 import "./TasksCards.css";
 
 export default function TasksCards({ onTaskClick }) {
@@ -133,7 +138,11 @@ export default function TasksCards({ onTaskClick }) {
               </div>
             ) : (
               completedTasks.map((task) => (
-                <div key={task.id} className="task-item" onClick={() => openTaskOverlay(task)}>
+                <div
+                  key={task.id}
+                  className="task-item"
+                  onClick={() => openTaskOverlay(task)}
+                >
                   <span className="task-title">{task.title}</span>
                   <div className="task-actions">
                     <button

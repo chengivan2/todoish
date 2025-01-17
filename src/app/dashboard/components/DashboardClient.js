@@ -7,6 +7,7 @@ import "./DashboardClient.css";
 import StatsCard from "./StatsCard";
 import TasksCards from "./TasksCards";
 import DashboardHeader from "./DashboardHeader";
+import { TrashIcon } from "@radix-ui/react-icons";
 
 export default function DashboardClient({ user, stats, tasks }) {
   const [selectedTask, setSelectedTask] = useState(null);
@@ -27,6 +28,22 @@ export default function DashboardClient({ user, stats, tasks }) {
 
   const handleEdit = () => {
     setIsEditing(true);
+  };
+
+  const handleDelete = async (taskId) => {
+    try {
+      const response = await fetch(`/api/tasks/${taskId}`, {
+        method: "DELETE",
+      });
+
+      if (response.ok) {
+        window.location.reload();
+      } else {
+        console.error("Failed to delete task");
+      }
+    } catch (error) {
+      console.error("Error deleting task:", error);
+    }
   };
 
   const handleUpdate = async () => {
@@ -127,6 +144,16 @@ export default function DashboardClient({ user, stats, tasks }) {
                 <div className="task-buttons">
                   <button onClick={handleUpdate}>Save</button>
                   <button onClick={closeSidebar}>Cancel</button>
+                  <button
+                      className="icon-button trash"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleDelete(selectedTask.id);
+                      }}
+                      title="Delete"
+                    >
+                      <TrashIcon />
+                    </button>
                 </div>
               </>
             ) : (
