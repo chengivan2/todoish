@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { CalendarIcon, CheckIcon, TrashIcon } from "@radix-ui/react-icons";
+import { CalendarIcon, CheckCircledIcon, CheckIcon, TrashIcon } from "@radix-ui/react-icons";
 import "./TasksCards.css";
 
 export default function TasksCards({ onTaskClick }) {
@@ -125,7 +125,7 @@ export default function TasksCards({ onTaskClick }) {
             {completedTasks.length === 0 ? (
               <div className="empty-message-container">
                 <div className="empty-message-icon">
-                  <CalendarIcon />
+                  <CheckCircledIcon />
                 </div>
                 <p className="empty-message">
                   You haven't completed any tasks yet.
