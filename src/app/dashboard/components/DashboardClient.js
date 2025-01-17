@@ -144,16 +144,6 @@ export default function DashboardClient({ user, stats, tasks }) {
                 <div className="task-buttons">
                   <button onClick={handleUpdate}>Save</button>
                   <button onClick={closeSidebar}>Cancel</button>
-                  <button
-                      className="icon-button trash"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleDelete(selectedTask.id);
-                      }}
-                      title="Delete"
-                    >
-                      <TrashIcon />
-                    </button>
                 </div>
               </>
             ) : (
@@ -163,6 +153,16 @@ export default function DashboardClient({ user, stats, tasks }) {
                 <div className="task-buttons">
                   <button onClick={handleEdit}>Edit</button>
                   <button onClick={closeSidebar}>Close</button>
+                  <button
+                    className="icon-button trash"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleDelete(selectedTask.id);
+                    }}
+                    title="Delete"
+                  >
+                    <TrashIcon />
+                  </button>
                 </div>
               </>
             )}
