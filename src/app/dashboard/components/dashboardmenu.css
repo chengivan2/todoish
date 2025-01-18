@@ -50,20 +50,13 @@ svg.dashboard-menu-close-icon {
   outline: none;
 }
 
-.dashboard-menu-title-and-cancel-container {
+.dashboard-menu-logo-and-cancel-container {
   display: flex;
   justify-content: space-between;
   align-content: center;
 }
 
-.AlertDialogTitle {
-  margin: 0;
-  color: #f5f5f5;
-  font-size: 17px;
-  font-weight: 500;
-}
-
-.dashboard-menu-title-and-cancel-container,
+.dashboard-menu-logo-and-cancel-container,
 .dashboard-menu-links-container {
   width: 100%;
 }
