@@ -8,8 +8,10 @@ export default function DashboardHeader() {
   return (
     <header className="dashboard-header">
       <div className="logo">Todoish Dashboard</div>
+      <div className="dashboard-menu-and-sign-out">
       <DashboardMenu />
       <SignOutButton />
+      </div>
     </header>
   );
 }
