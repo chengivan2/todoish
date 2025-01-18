@@ -3,6 +3,7 @@ import * as AlertDialog from "@radix-ui/react-alert-dialog";
 import "./dashboardmenu.css";
 import { Cross1Icon, HamburgerMenuIcon } from "@radix-ui/react-icons";
 import todoishMainLogo from "./todoishMainLogo.png";
+import Image from "next/image";
 
 const DashboardMenu = () => (
   <AlertDialog.Root>
