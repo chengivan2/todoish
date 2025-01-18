@@ -10,7 +10,7 @@ export default function DashboardHeader() {
     <header className="dashboard-header">
       <div className="logo">
         <Image 
-        src="./todoishMainLogo.png"
+        src="/todoishMainLogo.png"
         width={20}
         height={20}
         alt="Todoish main logo with a transparent background"/>
