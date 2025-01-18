@@ -22,7 +22,7 @@
 }
 
 @media (max-width: 500px) {
-  .dashboard-sign-out {
+  .sign-out-button {
     display: none;
   }
 }
