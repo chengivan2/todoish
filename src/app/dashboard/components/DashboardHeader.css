@@ -12,6 +12,15 @@
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+.dashboard-menu-and-sign-out {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 50%; 
+  gap: 1rem;
+}
+
 .hamburger-icon {
   cursor: pointer;
   font-size: 1.5rem;
