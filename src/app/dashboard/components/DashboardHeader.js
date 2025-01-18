@@ -12,8 +12,8 @@ export default function DashboardHeader() {
       <div className="logo">
         <Image 
         src={todoishMainLogo}
-        width={20}
-        height={20}
+        width={60}
+        height={60}
         alt="Todoish main logo with a transparent background"/>
       </div>
       <div className="dashboard-menu-and-sign-out">
