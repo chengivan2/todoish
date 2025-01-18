@@ -95,3 +95,15 @@ svg.dashboard-menu-close-icon {
     transform: translate(-50%, -50%) scale(1);
   }
 }
+
+@media (max-width: 768px) {
+  .dashboard-menu-links-container button {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .dashboard-menu-links-container button {
+    font-size: .9rem;
+  }
+}
