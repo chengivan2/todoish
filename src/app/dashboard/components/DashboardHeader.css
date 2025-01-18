@@ -25,4 +25,9 @@
   .sign-out-button {
     display: none;
   }
+
+  .dashboard-menu-and-sign-out {
+    justify-content: flex-end;
+    min-width: 50%;
+  }
 }
