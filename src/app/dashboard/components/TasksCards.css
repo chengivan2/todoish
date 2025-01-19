@@ -171,10 +171,6 @@ div#incomplete-tasks-card div.tasks-list div.task-item div.task-actions button {
 }
 
 @media (max-width: 480px) {
-  .tasks-cards-title {
-    font-size: 1.2rem;
-  }
-
   .empty-message-container p {
     font-size: 0.9rem;
   }
