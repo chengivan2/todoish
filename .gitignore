@@ -48,3 +48,7 @@ next-env.d.ts
 /prisma/*.db
 /prisma/*.db-journal
 node_modules/.prisma/*
+
+# Start Generation Here
+/.vscodecounter/
+/.vscodecounter/*
