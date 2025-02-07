@@ -1,6 +1,7 @@
 # Task Management Dashboard
 
-This project is a task management dashboard that allows users to manage their tasks with features like adding, editing, deleting, and viewing tasks. The dashboard uses a glassmorphic design for a modern and clean user interface.
+Todoish is a task management tool that allows users to manage their tasks with features like adding, editing, deleting, and viewing tasks.
+The dashboard UI features a glassmorphic touch and the subtlest of bright colors.
 
 ## Features
 
