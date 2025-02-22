@@ -55,6 +55,10 @@ svg.home-menu-close-icon {
   outline: none;
 }
 
+.AlertDialogTitle, .AlertDialogDescription {
+    display: none;
+}
+
 .home-menu-logo-and-cancel-container {
   display: flex;
   justify-content: space-between;
