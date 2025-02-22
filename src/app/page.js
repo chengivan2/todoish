@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "./homepage.module.css";
 import Image from "next/image";
-import HomeHeaderButtons from "./components/homeHeaderButtons";
+import HomeMenu from "./components/homemenu";
 
 export default function Home() {
   return (
@@ -29,7 +29,7 @@ export default function Home() {
                   Contact
                 </Link>
               </nav>
-              <HomeHeaderButtons />
+              <HomeMenu />
             </header>
             <div className={styles.heroSectionText}>
             <h1 className={styles.heroTitle}>Welcome to Todoish</h1>
