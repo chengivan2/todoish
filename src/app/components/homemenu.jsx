@@ -3,6 +3,7 @@ import * as AlertDialog from "@radix-ui/react-alert-dialog";
 import "./homemenu.css";
 import { Cross1Icon, HamburgerMenuIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
+import HomeHeaderButtons from "./homeHeaderButtons";
 
 const HomeMenu = () => (
   <AlertDialog.Root>
@@ -42,6 +43,10 @@ const HomeMenu = () => (
           <AlertDialog.Action>
             <a href="#stats">Stats</a>
           </AlertDialog.Action>
+        </div>
+
+        <div className="home-header-buttons">
+          <HomeHeaderButtons />
         </div>
       </AlertDialog.Content>
     </AlertDialog.Portal>
