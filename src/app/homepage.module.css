@@ -9,31 +9,33 @@
 #heroSection {
   width: 100vw;
   min-height: 100vh;
-  padding: 1rem;
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
 }
 
 .hero {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   text-align: center;
-  background: rgba(30, 30, 30, 0.8); /* Updated for dark mode */
+  background: rgba(30, 30, 30, 0.8);
   border-radius: 12px;
   padding: 40px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Darker shadow for dark mode */
-  width: 100%; /* Set hero to 100% width */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  width: 100%;
 }
 
 .heroTitle {
   font-size: 2.5rem;
-  color: #ffffff; /* Updated for dark mode */
+  color: #ffffff;
   margin-bottom: 16px;
 }
 
 .heroSubtitle {
   font-size: 1.25rem;
-  color: #cccccc; /* Updated for dark mode */
+  color: #cccccc;
 }
 
 .page {
@@ -49,14 +51,14 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: #1a1a1a; /* Updated for dark mode */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Darker shadow for dark mode */
+  background-color: #1a1a1a;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #ffffff; /* Updated for dark mode */
+  color: #ffffff;
 }
 
 .menu {
@@ -66,12 +68,12 @@
 
 .link {
   text-decoration: none;
-  color: #0070f3; /* Keep link color */
+  color: #0070f3;
   transition: color 0.3s;
 }
 
 .link:hover {
-  color: #0056b3; /* Keep hover color */
+  color: #0056b3;
 }
 
 .authButtons {
@@ -80,7 +82,7 @@
 }
 
 .signOutButton {
-  background-color: #e63946; /* Keep button color */
+  background-color: #e63946;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -90,5 +92,5 @@
 }
 
 .signOutButton:hover {
-  background-color: #d62839; /* Keep hover color */
+  background-color: #d62839;
 }
