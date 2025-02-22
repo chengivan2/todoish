@@ -7,7 +7,6 @@
 }
 
 #heroSection {
-  width: 100vw;
   min-height: 100vh;
   padding: 4rem 2rem;
   display: flex;
@@ -21,9 +20,9 @@
   justify-content: space-around;
   text-align: center;
   background: rgba(30, 30, 30, 0.8);
-  border-radius: 12px;
+  border-radius: 1rem;
   padding: 40px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 8px hsla(0, 0%, 9%, 0.502), 0 0 8px hsla(20, 100%, 70%, 0.5);
   width: 100%;
 }
 
@@ -38,19 +37,13 @@
   color: #cccccc;
 }
 
-.page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-}
-
 .header {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 1.5rem 2.5rem;
+  border-radius: 1000px;
   background-color: #1a1a1a;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -68,12 +61,12 @@
 
 .link {
   text-decoration: none;
-  color: #0070f3;
+  color: #f5f5f5;
   transition: color 0.3s;
 }
 
 .link:hover {
-  color: #0056b3;
+  color: #e5e5e5;
 }
 
 .authButtons {

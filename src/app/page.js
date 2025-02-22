@@ -1,10 +1,11 @@
 import Link from "next/link";
 import styles from "./homepage.module.css";
 import Image from "next/image";
+import HomeHeaderButtons from "./components/homeHeaderButtons";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
+    
       <main>
         <section id={styles.heroSection}>
           <div className={styles.hero}>
@@ -12,8 +13,8 @@ export default function Home() {
               <div className={styles.logo}>
                 <Image
                   src="/todoishMainLogo.png"
-                  width={50}
-                  height={50}
+                  width={40}
+                  height={40}
                   alt="Todoish Main Logo"
                 />
               </div>
@@ -28,12 +29,7 @@ export default function Home() {
                   Contact
                 </Link>
               </nav>
-              <div className={styles.authButtons}>
-                <Link className={styles.link} href="/dashboard">
-                  Dashboard
-                </Link>
-                <button className={styles.signOutButton}>Sign Out</button>
-              </div>
+              <HomeHeaderButtons />
             </header>
             <div className={styles.heroSectionText}>
             <h1 className={styles.heroTitle}>Welcome to Todoish</h1>
@@ -42,6 +38,5 @@ export default function Home() {
           </div>
         </section>
       </main>
-    </div>
   );
 }

@@ -1,0 +1,19 @@
+.dashboard-button,
+.sign-in-button,
+.sign-up-button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  background-color: #0070f3; /* Example color */
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.sign-out-button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  background-color: #e63946; /* Example color */
+  border: none;
+  cursor: pointer;
+} 
