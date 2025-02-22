@@ -1,0 +1,94 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  grid-row-start: 2;
+  min-height: 100vh;
+}
+
+#heroSection {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgba(30, 30, 30, 0.8); /* Updated for dark mode */
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Darker shadow for dark mode */
+  width: 100%; /* Set hero to 100% width */
+}
+
+.heroTitle {
+  font-size: 2.5rem;
+  color: #ffffff; /* Updated for dark mode */
+  margin-bottom: 16px;
+}
+
+.heroSubtitle {
+  font-size: 1.25rem;
+  color: #cccccc; /* Updated for dark mode */
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #1a1a1a; /* Updated for dark mode */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Darker shadow for dark mode */
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff; /* Updated for dark mode */
+}
+
+.menu {
+  display: flex;
+  gap: 20px;
+}
+
+.link {
+  text-decoration: none;
+  color: #0070f3; /* Keep link color */
+  transition: color 0.3s;
+}
+
+.link:hover {
+  color: #0056b3; /* Keep hover color */
+}
+
+.authButtons {
+  display: flex;
+  gap: 10px;
+}
+
+.signOutButton {
+  background-color: #e63946; /* Keep button color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.signOutButton:hover {
+  background-color: #d62839; /* Keep hover color */
+}
