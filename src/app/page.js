@@ -18,17 +18,7 @@ export default function Home() {
                   alt="Todoish Main Logo"
                 />
               </div>
-              <nav className={styles.menu}>
-                <Link className={styles.link} href="/">
-                  Home
-                </Link>
-                <Link className={styles.link} href="/about">
-                  About
-                </Link>
-                <Link className={styles.link} href="/contact">
-                  Contact
-                </Link>
-              </nav>
+              
               <HomeMenu />
             </header>
             <div className={styles.heroSectionText}>
