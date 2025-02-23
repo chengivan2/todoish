@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap");
+
 svg.home-menu-hamburger-icon,
 svg.home-menu-close-icon {
   width: 32px;
@@ -35,9 +37,9 @@ svg.home-menu-close-icon {
 .AlertDialogContent {
   display: flex;
   flex-direction: column;
-  
   align-items: center;
   justify-content: space-between;
+  font-family: "Playwrite DE Grund", serif;
   box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px,
     hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
   position: fixed;
@@ -68,6 +70,7 @@ svg.home-menu-close-icon {
 .home-menu-logo-and-cancel-container,
 .home-menu-links-container {
   width: 100%;
+  
 }
 
 .home-menu-links-container {
@@ -75,6 +78,7 @@ svg.home-menu-close-icon {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  font-family: "Playwrite DE Grund", serif !important;
 }
 
 .home-menu-links-container button {

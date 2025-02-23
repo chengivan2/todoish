@@ -21,7 +21,7 @@
   text-align: center;
   background: rgba(30, 30, 30, 0.8);
   border-radius: 1rem;
-  padding: 40px;
+  padding: 1.5rem;
   box-shadow: 0 2px 8px hsla(0, 0%, 9%, 0.502), 0 0 8px hsla(20, 100%, 70%, 0.5);
   width: 100%;
 }
@@ -86,4 +86,24 @@
 
 .signOutButton:hover {
   background-color: #d62839;
+}
+
+@media (max-width: 768px) {
+  .authButtons {
+    gap: 5px;
+  }
+
+  .signOutButton {
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 500px) {
+  .authButtons {
+    gap: 3px;
+  }
+
+  .signOutButton {
+    padding: 6px 12px;
+  }
 }
