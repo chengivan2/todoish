@@ -11,7 +11,7 @@
 .sign-up-button {
   padding: 10px 20px;
   border-radius: 5px;
-  color: #f5f5f5;
+  color: #ffcc99;
   background-color: transparent;
   text-decoration: none;
   margin: 0 5px;
@@ -20,7 +20,7 @@
 .sign-up-button:hover {
   padding: 10px 20px;
   border-radius: 5px;
-  color: #ffcc99;
+  color: #f5f5f5;
   background-color: #ff9966;
   text-decoration: none;
   margin: 0 5px;
