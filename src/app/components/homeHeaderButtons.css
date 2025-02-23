@@ -1,10 +1,27 @@
 .dashboard-button,
-.sign-in-button,
+.sign-in-button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #f5f5f5;
+  background-color: #ff9966;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
 .sign-up-button {
   padding: 10px 20px;
   border-radius: 5px;
-  color: white;
-  background-color: #0070f3; /* Example color */
+  color: #f5f5f5;
+  background-color: transparent;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.sign-up-button:hover {
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #ffcc99;
+  background-color: #ff9966;
   text-decoration: none;
   margin: 0 5px;
 }
