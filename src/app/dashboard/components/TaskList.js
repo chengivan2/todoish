@@ -84,10 +84,14 @@ export default function TaskList({ initialTasks, onTaskClick }) {
     <div className="task-list">
     
       {tasks.length === 0 ? (
-        <div className="empty-task-list">
+        <div className="empty-message-container">
+        <div className="empty-message-icon">
           <FaceIcon />
-          <span>Such empty</span>
         </div>
+        <p className="empty-message">
+          Look at that. Such Empty
+        </p>
+      </div>
       ) : (
         tasks.map(task => (
           <div 
