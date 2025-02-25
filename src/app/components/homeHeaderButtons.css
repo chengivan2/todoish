@@ -25,3 +25,26 @@
   text-decoration: none;
   margin: 0 5px;
 }
+
+@media (max-width: 768px) {
+  .dashboard-button,
+  .sign-in-button,
+  .sign-up-button {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+
+  .sign-up-button {
+    color: #f5f5f5;
+  }
+}
+
+@media (max-width: 500px) {
+  .dashboard-button,
+  .sign-in-button,
+  .sign-up-button {
+    padding: 4px 8px;
+    font-size: 0.75rem;
+  }
+}
+

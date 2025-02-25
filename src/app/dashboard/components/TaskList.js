@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { TrashIcon } from '@radix-ui/react-icons';
+import { TrashIcon, FaceIcon } from '@radix-ui/react-icons';
 import './TaskList.css';
 
 export default function TaskList({ initialTasks, onTaskClick }) {
@@ -82,37 +82,45 @@ export default function TaskList({ initialTasks, onTaskClick }) {
 
   return (
     <div className="task-list">
-      {tasks.map(task => (
-        <div 
-          key={task.id} 
-          className={`task-item ${task.completed ? 'completed' : ''}`}
-          onClick={() => handleTaskClick(task)}
-        >
-          <span className="task-title">{task.title}</span>
-          <div className="task-actions">
-            <button 
-              className="task-done-button" 
-              onClick={(e) => {
-                e.stopPropagation();
-                handleToggleComplete(task.id);
-              }}
-              title={task.completed ? "Mark as not done" : "I'm done"}
-            >
-              {task.completed ? "Revisit" : "Done"}
-            </button>
-            <button 
-              className="task-delete-button" 
-              onClick={(e) => {
-                e.stopPropagation();
-                handleDelete(task.id);
-              }}
-              title="Delete task"
-            >
-              <TrashIcon />
-            </button>
-          </div>
+    
+      {tasks.length === 0 ? (
+        <div className="empty-task-list">
+          <FaceIcon />
+          <span>Such empty</span>
         </div>
-      ))}
+      ) : (
+        tasks.map(task => (
+          <div 
+            key={task.id} 
+            className={`task-item ${task.completed ? 'completed' : ''}`}
+            onClick={() => handleTaskClick(task)}
+          >
+            <span className="task-title">{task.title}</span>
+            <div className="task-actions">
+              <button 
+                className="task-done-button" 
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleToggleComplete(task.id);
+                }}
+                title={task.completed ? "Mark as not done" : "I'm done"}
+              >
+                {task.completed ? "Revisit" : "Done"}
+              </button>
+              <button 
+                className="task-delete-button" 
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleDelete(task.id);
+                }}
+                title="Delete task"
+              >
+                <TrashIcon />
+              </button>
+            </div>
+          </div>
+        ))
+      )}
     </div>
   );
 } 
