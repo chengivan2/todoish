@@ -89,7 +89,7 @@ export default function TaskList({ initialTasks, onTaskClick }) {
           <FaceIcon />
         </div>
         <p className="empty-message">
-          Look at that. Such Empty
+          Look at that. Such Empty.
         </p>
       </div>
       ) : (
