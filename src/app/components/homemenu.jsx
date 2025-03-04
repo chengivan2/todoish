@@ -12,13 +12,17 @@ const HomeMenu = () => (
     </AlertDialog.Trigger>
     <AlertDialog.Portal>
       <AlertDialog.Overlay className="AlertDialogOverlay" />
-      <AlertDialog.Content aria-label="Todoish Menu" className="AlertDialogContent">
-      <AlertDialog.Title className="AlertDialogTitle">
-					Todoish Menu and authentication buttons
-				</AlertDialog.Title>
-				<AlertDialog.Description className="AlertDialogDescription">
-					This overlay contains the menu, sign out button, sign in button, sign up button and the link to the dahsboard.
-				</AlertDialog.Description>
+      <AlertDialog.Content
+        aria-label="Todoish Menu"
+        className="AlertDialogContent"
+      >
+        <AlertDialog.Title className="AlertDialogTitle">
+          Todoish Menu and authentication buttons
+        </AlertDialog.Title>
+        <AlertDialog.Description className="AlertDialogDescription">
+          This overlay contains the menu, sign out button, sign in button, sign
+          up button and the link to the dahsboard.
+        </AlertDialog.Description>
         <div className="home-menu-logo-and-cancel-container">
           <div className="home-menu-logo">
             <Image
