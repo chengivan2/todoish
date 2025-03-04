@@ -16,7 +16,7 @@ svg.home-menu-close-icon {
 .home-menu-hamburger-icon:hover {
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: .3rem;
+  border-radius: 0.3rem;
   background: rgba(255, 255, 255, 0.15);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   color: #ffcc99;
@@ -57,8 +57,9 @@ svg.home-menu-close-icon {
   outline: none;
 }
 
-.AlertDialogTitle, .AlertDialogDescription {
-    display: none;
+.AlertDialogTitle,
+.AlertDialogDescription {
+  display: none;
 }
 
 .home-menu-logo-and-cancel-container {
@@ -70,7 +71,6 @@ svg.home-menu-close-icon {
 .home-menu-logo-and-cancel-container,
 .home-menu-links-container {
   width: 100%;
-  
 }
 
 .home-menu-links-container {
@@ -121,6 +121,6 @@ svg.home-menu-close-icon {
 
 @media (max-width: 500px) {
   .home-menu-links-container button {
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
 }
