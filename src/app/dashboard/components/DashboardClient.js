@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import TaskList from "./TaskList";
 import AddTaskButton from "./AddTaskButton";
-import SignOutButton from "@/app/components/SignOutButton";
 import "./DashboardClient.css";
 import StatsCard from "./StatsCard";
 import TasksCards from "./TasksCards";
