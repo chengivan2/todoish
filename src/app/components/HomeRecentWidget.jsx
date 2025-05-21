@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState, useRef } from "react";
 import confetti from "canvas-confetti";
 import styles from "../homepage.module.css";
