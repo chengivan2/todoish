@@ -4,6 +4,10 @@ import { syncUser } from "@/lib/db";
 import prisma from "@/lib/prisma";
 import DashboardClient from "./components/DashboardClient";
 import HomeRecentWidget from "../components/HomeRecentWidget";
+import DashboardHeader from "./components/DashboardHeader";
+import StatsCard from "./components/StatsCard";
+import TaskList from "./components/TaskList";
+import AddTaskButton from "./components/AddTaskButton";
 
 async function getTaskStats(userId) {
   const tasks = await prisma.task.findMany({
@@ -56,6 +60,7 @@ export default async function DashboardPage() {
         <HomeRecentWidget />
       </div>
       <div>
+        <DashboardHeader />
         <section className="dashboard-welcome-message">
           <h2>Welcome back, {user.given_name || user.email}</h2>
         </section>
