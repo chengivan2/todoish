@@ -56,7 +56,6 @@ export default async function DashboardPage() {
         <HomeRecentWidget />
       </div>
       <div>
-        <DashboardHeader />
         <section className="dashboard-welcome-message">
           <h2>Welcome back, {user.given_name || user.email}</h2>
         </section>
