@@ -7,6 +7,7 @@ import StatsCard from "./StatsCard";
 import TasksCards from "./TasksCards";
 import DashboardHeader from "./DashboardHeader";
 import { TrashIcon } from "@radix-ui/react-icons";
+import HomeRecentWidget from "../../components/HomeRecentWidget";
 
 export default function DashboardClient({ user, stats, tasks }) {
   const [selectedTask, setSelectedTask] = useState(null);
@@ -72,14 +73,11 @@ export default function DashboardClient({ user, stats, tasks }) {
   };
 
   return (
-    <div className="dashboard">
-      <DashboardHeader />
-
-      <section className="dashboard-welcome-message">
-        <h2>Welcome back, {user.given_name || user.email}</h2>
-      </section>
-
-      <section className="stats-grid" id="stats">
+    <div className="dashboard" style={{ display: "grid", gridTemplateColumns: "1fr 2fr", gridTemplateRows: "1fr auto", gap: "1rem", height: "100vh" }}>
+      <div style={{ gridRow: "1 / span 2", gridColumn: "1 / 2" }}>
+        <HomeRecentWidget />
+      </div>
+      <div style={{ gridRow: "1 / 2", gridColumn: "2 / 3", display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "1rem" }}>
         <StatsCard
           title="Open Tasks"
           value={stats.totalOpen}
@@ -94,6 +92,8 @@ export default function DashboardClient({ user, stats, tasks }) {
           buttonLabel="Review"
           buttonTarget="#completed-tasks-card"
         />
+      </div>
+      <div style={{ gridRow: "2 / 3", gridColumn: "2 / 3" }}>
         <StatsCard
           title="Completion Rate"
           value={`${stats.completionRate}%`}
@@ -101,8 +101,7 @@ export default function DashboardClient({ user, stats, tasks }) {
           buttonLabel="View History"
           buttonTarget="#main-task-list"
         />
-      </section>
-
+      </div>
       <section className="tasks-section">
         <h2 className="tasks-title">Your Tasks</h2>
         <TaskList
